@@ -5,15 +5,6 @@ A web-based geospatial intelligence system designed to support entrepreneurs and
 The platform integrates census data, satellite imagery, road networks, business listings, and rental market data to generate a **Smart Location Score** that ranks urban zones according to business suitability.
 
 ---
-
-## 🏆 Recognition & Achievements
-- Innovative approach in **smart city analytics** for Egyptian cities.  
-- Integrates **multi-source datasets** (census, night lights, road networks, rental data, business listings).  
-- Provides **AI-driven recommendations** for entrepreneurs and investors.  
-- Scalable architecture designed for expansion to Cairo and other governorates.  
-
----
-
 ## 📜 Project Overview
 The Smart City Analyzer addresses the lack of a unified urban intelligence platform in Egypt.  
 Entrepreneurs often rely on intuition or fragmented data sources. This system fills the gap by combining **demographics, economic activity, rental affordability, traffic accessibility, and competitor density** into one integrated platform.
