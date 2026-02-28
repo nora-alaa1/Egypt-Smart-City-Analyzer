@@ -117,8 +117,3 @@ Key Features:
 - Development of a centralized urban intelligence system for Egypt.  
 - Support nationwide business location optimization.  
 - Contribute to **data-driven smart city planning** at the national level.  
-
-
-
-This README now fully reflects the proposal document you uploaded, but in GitHub-ready Markdown format.
-Would you like me to also add a “Team Members” section at the top (with names and roles) so it matches the proposal’s project information?
