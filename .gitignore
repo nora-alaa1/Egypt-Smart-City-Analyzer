@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Data artifacts (large files)
+*.jar
+phase2_transform/phase2_transform/
+
+# Airflow
+smartcity-airflow/logs/
+smartcity-airflow/plugins/
+smartcity-airflow/__pycache__/
+
+# Docker
+*.pid
+
+# Temp files
+phase3_dwh/fix_dwh.py
+phase3_dwh/renumber.py
+phase3_dwh/verify.py
+phase3_dwh/apply_and_verify.py
+read_schools.py
+read_schools2.py

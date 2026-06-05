@@ -1,0 +1,142 @@
+﻿# â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+# â��       SmartCity Analyzer â�� Apache Airflow Orchestrator           â��
+# â��       Airflow 2.9 �· LocalExecutor �· Docker-in-Docker            â��
+# â�šâ��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+#
+# ðŸš� Quick Start:
+#   1. cp .env.example .env  (���¹�¯���� PROJECT_PATH)
+#   2. docker compose up airflow-init
+#   3. docker compose up -d
+#   4. �§���ª�­ http://localhost:8085  (admin / admin)
+#
+# â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+
+version: "3.9"
+
+x-airflow-common: &airflow-common
+  build:
+    context: ..
+    dockerfile: Dockerfile.airflow
+  env_file: .env
+  environment:
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-postgres:5432/airflow
+    AIRFLOW__CORE__FERNET_KEY: ""
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__SCHEDULER__MIN_FILE_PROCESS_INTERVAL: "30"
+    AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "true"
+    AIRFLOW__CORE__DAGBAG_IMPORT_TIMEOUT: "120"
+    AIRFLOW__WEBSERVER__SECRET_KEY: "smartcity_secret_key_change_me"
+    AIRFLOW__SCHEDULER__SCHEDULER_ZOMBIE_TASK_THRESHOLD: "600"
+    AIRFLOW__SCHEDULER__JOB_HEARTBEAT_SEC: "10"
+    AIRFLOW__SCHEDULER__LOCAL_TASK_JOB_HEARTBEAT_SEC: "10"
+    # â�� �¨�����±���± �§���� Host path �¬������ �§���� containers �¹�´�§�� docker -v �Š�´�ª�º��
+    SMARTCITY_HOST_PATH: ${SMARTCITY_HOST_PATH}
+  volumes:
+    # Airflow files
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./plugins:/opt/airflow/plugins
+    - ./config:/opt/airflow/config
+    # SmartCity project â�� â�� �´�Š�����§ :ro �¹�´�§�� Spark �Š���¯�± �Š���ª�¨ �§���� output
+    - ${SMARTCITY_PROJECT_PATH}:/opt/airflow/smartcity
+    # Docker socket â�� �¨�Š�®�����Š Airflow �Š�´�º���� docker commands
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /etc/localtime:/etc/localtime:ro   # â�� �����§ �¶�Š�����§
+
+  depends_on:
+    airflow-postgres:
+      condition: service_healthy
+  user: "0:0"
+
+services:
+
+  # â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+  # AIRFLOW METADATA DATABASE
+  # â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+  airflow-postgres:
+    image: postgres:15-alpine
+    container_name: airflow_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - airflow_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow -d airflow"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5433:5432"
+
+  # â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+  # AIRFLOW INIT (runs once to create DB + admin user)
+  # â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+  airflow-init:
+    <<: *airflow-common
+    container_name: airflow_init
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        apt-get update -qq && apt-get install -y -qq docker.io 2>/dev/null || true
+        pip install --quiet apache-airflow-providers-docker
+        airflow db migrate
+        airflow users create \
+          --username admin \
+          --password admin \
+          --firstname SmartCity \
+          --lastname Admin \
+          --role Admin \
+          --email admin@smartcity.eg 2>/dev/null || echo "user already exists"
+        echo "Airflow initialized successfully"
+    restart: "no"
+
+  # â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+  # AIRFLOW WEBSERVER
+  # â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+  airflow-webserver:
+    <<: *airflow-common
+    container_name: airflow_webserver
+    restart: unless-stopped
+    command: webserver
+    ports:
+      - "8085:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      airflow-postgres:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+
+  # â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+  # AIRFLOW SCHEDULER
+  # â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��â��
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: airflow_scheduler
+    restart: unless-stopped
+    command: >
+      bash -c "apt-get update -qq &&
+               apt-get install -y -qq docker.io &&
+               airflow scheduler"
+    healthcheck:
+      test: ["CMD-SHELL", "airflow jobs check --job-type SchedulerJob --hostname $(hostname)"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      airflow-postgres:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+
+
