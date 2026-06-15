@@ -30,19 +30,6 @@ TIMEOUT_MS   = 60_000
 ALEX_LAT = (30.9, 31.4)
 ALEX_LON = (29.5, 30.2)
 
-HEADER_FILL = PatternFill("solid", fgColor="1F4E79")
-HEADER_FONT = Font(name="Arial", bold=True, color="FFFFFF", size=11)
-DATA_FONT   = Font(name="Arial", size=10)
-EVEN_FILL   = PatternFill("solid", fgColor="D9E1F2")
-THIN        = Border(
-    left=Side(style="thin"), right=Side(style="thin"),
-    top=Side(style="thin"),  bottom=Side(style="thin"),
-)
-
-COL_WIDTHS = {
-    "name": 40, "type": 22, "edu_level": 18,
-    "latitude": 13, "longitude": 13, "operator": 30, "capacity": 12,
-}
 
 
 def clean_record(raw: dict) -> dict | None:
@@ -64,63 +51,6 @@ def clean_record(raw: dict) -> dict | None:
         }
     except Exception:
         return None
-
-
-def write_excel(df: pd.DataFrame, path: str, sheet_name: str, title: str):
-    headers = df.columns.tolist()
-    wb = Workbook()
-    ws = wb.active
-    ws.title = sheet_name
-
-    # Title row
-    ws.merge_cells(f"A1:{chr(64+len(headers))}1")
-    title_cell = ws["A1"]
-    title_cell.value = title
-    title_cell.font  = Font(name="Arial", bold=True, color="FFFFFF", size=13)
-    title_cell.fill  = PatternFill("solid", fgColor="0D3349")
-    title_cell.alignment = Alignment(horizontal="center", vertical="center")
-    ws.row_dimensions[1].height = 28
-
-    # Header row
-    for ci, h in enumerate(headers, 1):
-        c = ws.cell(row=2, column=ci, value=h)
-        c.font, c.fill = HEADER_FONT, HEADER_FILL
-        c.alignment = Alignment(horizontal="center", vertical="center")
-        c.border = THIN
-        col_letter = ws.cell(row=2, column=ci).column_letter
-        ws.column_dimensions[col_letter].width = COL_WIDTHS.get(h, 18)
-    ws.row_dimensions[2].height = 20
-
-    # Data rows
-    for ri, row in df.iterrows():
-        er   = ri + 3
-        fill = EVEN_FILL if ri % 2 == 0 else PatternFill()
-        for ci, col in enumerate(headers, 1):
-            val = row[col]
-            if pd.isna(val):
-                val = None
-            c = ws.cell(row=er, column=ci, value=val)
-            c.font, c.fill, c.border = DATA_FONT, fill, THIN
-            c.alignment = Alignment(
-                horizontal="left" if ci == 1 else "center",
-                vertical="center",
-            )
-
-    # Summary
-    last = len(df) + 2
-    sr   = last + 2
-    for label, val in [
-        ("Total Records", f"=COUNTA(A3:A{last})"),
-        ("Scraped At",    datetime.now().strftime("%Y-%m-%d")),
-        ("Source",        "OpenStreetMap / Overpass API"),
-    ]:
-        r = sr
-        sr += 1
-        ws.cell(row=r, column=1, value=label).font = Font(name="Arial", bold=True, size=10)
-        ws.cell(row=r, column=2, value=val)
-
-    wb.save(path)
-    log.info(f"Saved {len(df)} rows → {path}")
 
 
 def run():

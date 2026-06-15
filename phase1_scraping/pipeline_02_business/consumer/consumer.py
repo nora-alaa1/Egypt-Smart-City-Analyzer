@@ -126,62 +126,8 @@ def clean_pharmacy_record(raw: dict) -> dict | None:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# EXCEL / CSV OUTPUT
+# CSV OUTPUT
 # ═══════════════════════════════════════════════════════════════════════════════
-
-HEADER_FILL = PatternFill("solid", fgColor="1F4E79")
-HEADER_FONT = Font(name="Arial", bold=True, color="FFFFFF", size=11)
-DATA_FONT   = Font(name="Arial", size=10)
-EVEN_FILL   = PatternFill("solid", fgColor="D9E1F2")
-THIN        = Border(
-    left=Side(style="thin"), right=Side(style="thin"),
-    top=Side(style="thin"),  bottom=Side(style="thin"),
-)
-
-
-def write_excel(df: pd.DataFrame, path: str, sheet_name: str):
-    headers = df.columns.tolist()
-    wb = Workbook()
-    ws = wb.active
-    ws.title = sheet_name
-
-    col_widths = {"name": 35, "latitude": 14, "longitude": 14}
-    for ci, h in enumerate(headers, 1):
-        c = ws.cell(row=1, column=ci, value=h)
-        c.font, c.fill = HEADER_FONT, HEADER_FILL
-        c.alignment = Alignment(horizontal="center", vertical="center")
-        c.border = THIN
-        ws.column_dimensions[ws.cell(row=1, column=ci).column_letter].width = \
-            col_widths.get(h, 20)
-    ws.row_dimensions[1].height = 22
-
-    for ri, row in df.iterrows():
-        er   = ri + 2
-        fill = EVEN_FILL if ri % 2 == 0 else PatternFill()
-        for ci, col in enumerate(headers, 1):
-            val = row[col]
-            if pd.isna(val):
-                val = None
-            c = ws.cell(row=er, column=ci, value=val)
-            c.font, c.fill, c.border = DATA_FONT, fill, THIN
-            c.alignment = Alignment(
-                horizontal="left" if ci == 1 else "center",
-                vertical="center",
-            )
-
-    last = len(df) + 1
-    sr   = last + 2
-    for label, formula, r in [
-        ("Total Records", f"=COUNTA(A2:A{last})", sr),
-        ("Avg Latitude",  f"=AVERAGE(B2:B{last})", sr + 1) if "latitude" in headers else ("", "", sr + 1),
-        ("Scraped At",    datetime.now().strftime("%Y-%m-%d"), sr + 2),
-    ]:
-        if label:
-            ws.cell(row=r, column=1, value=label).font = Font(name="Arial", bold=True, size=10)
-            ws.cell(row=r, column=2, value=formula)
-
-    wb.save(path)
-    log.info(f"Saved {len(df)} rows → {path}")
 
 
 def write_csv(df: pd.DataFrame, path: str):

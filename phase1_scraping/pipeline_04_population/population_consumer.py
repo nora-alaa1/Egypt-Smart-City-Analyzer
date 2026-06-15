@@ -26,7 +26,27 @@ GROUP_ID     = "population-cleaner-group"
 OUTPUT_DIR   = os.path.join(os.path.dirname(__file__), "output")
 TIMEOUT_MS   = 60_000
 
-# ─── Formatting constants removed (openpyxl not needed) ───────────────────────
+
+def clean_record(raw: dict) -> dict | None:
+    try:
+        district = str(raw.get("district", "")).strip()
+        if not district:
+            return None
+        pop = raw.get("population")
+        if pop is not None:
+            pop = int(float(pop))
+        return {
+            "district":             district,
+            "population":           pop,
+            "population_source":    raw.get("population_source", "estimate"),
+            "nightlight_intensity": raw.get("nightlight_intensity"),
+            "year":                 raw.get("year", datetime.now().year),
+            "latitude":             raw.get("latitude"),
+            "longitude":            raw.get("longitude"),
+        }
+    except Exception as e:
+        log.debug(f"Clean error: {e}")
+        return None
 
 
 def write_csv(df: pd.DataFrame, path: str):

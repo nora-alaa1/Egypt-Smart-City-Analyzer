@@ -28,7 +28,48 @@ GROUP_ID     = "traffic-cleaner-group"
 OUTPUT_DIR   = os.path.join(os.path.dirname(__file__), "output")
 TIMEOUT_MS   = 90_000   # أكبر لأن الداتا كبيرة
 
-# ─── Formatting constants removed (openpyxl not needed) ───────────────────────
+ALEX_LAT = (30.9, 31.4)
+ALEX_LON = (29.5, 30.2)
+
+
+def clean_node(raw: dict) -> dict | None:
+    try:
+        lat = float(raw.get("latitude", 0))
+        lon = float(raw.get("longitude", 0))
+        if not (ALEX_LAT[0] <= lat <= ALEX_LAT[1] and ALEX_LON[0] <= lon <= ALEX_LON[1]):
+            return None
+        return {
+            "node_id":      str(raw.get("node_id", "")),
+            "latitude":     round(lat, 6),
+            "longitude":    round(lon, 6),
+            "district":     raw.get("district"),
+            "street_count": raw.get("street_count"),
+            "betweenness":  raw.get("betweenness"),
+            "source":       raw.get("source", ""),
+        }
+    except Exception:
+        return None
+
+
+def clean_edge(raw: dict) -> dict | None:
+    try:
+        length = raw.get("length_m")
+        if length is not None:
+            length = round(float(length), 1)
+        speed = raw.get("speed_kph")
+        if speed is not None:
+            speed = int(float(speed))
+        return {
+            "from_node": str(raw.get("from_node", "")),
+            "to_node":   str(raw.get("to_node", "")),
+            "name":      raw.get("name"),
+            "length_m":  length,
+            "speed_kph": speed,
+            "road_type": raw.get("road_type", "Unclassified"),
+            "source":    raw.get("source", ""),
+        }
+    except Exception:
+        return None
 
 
 def write_csv(df: pd.DataFrame, path: str):
