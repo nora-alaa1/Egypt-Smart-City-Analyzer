@@ -3,7 +3,7 @@ Aqarmap Rental Data — Kafka Consumer + Cleaner
 ================================================
 يستقبل events من الـ Producer
 → ينظف الداتا
-→ يحفظها في Excel بنفس شكل rent_commercial3_cleaned.xlsx
+→ يحفظها في CSV
 
 Output columns:
     area(m²)     | int
@@ -19,8 +19,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 from kafka import KafkaConsumer
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+# openpyxl removed — all output is now CSV
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [CONSUMER] %(message)s")
 log = logging.getLogger(__name__)
@@ -87,23 +86,13 @@ def clean_record(raw: dict) -> dict | None:
         return None
 
 
-# ─── Excel Export (نفس شكل rent_commercial3_cleaned.xlsx) ──────────────────────
-
-HEADER_FILL   = PatternFill("solid", fgColor="1F4E79")  # أزرق داكن
-HEADER_FONT   = Font(name="Arial", bold=True, color="FFFFFF", size=11)
-DATA_FONT     = Font(name="Arial", size=10)
-EVEN_FILL     = PatternFill("solid", fgColor="D9E1F2")  # أزرق فاتح
-THIN_BORDER   = Border(
-    left=Side(style="thin"), right=Side(style="thin"),
-    top=Side(style="thin"),  bottom=Side(style="thin"),
-)
-COL_WIDTHS    = {"A": 12, "B": 14, "C": 45}   # area | rent | location
+# ─── CSV Export ────────────────────────────────────────────────────────────────
 
 
-def save_to_excel(records: list[dict], cycle: int):
+def save_to_csv(records: list[dict], cycle: int):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     date_tag  = datetime.now().strftime("%Y%m%d")
-    filename  = f"rent_commercial_alexandria_cycle{cycle}_{date_tag}.xlsx"
+    filename  = f"rent_commercial_alexandria_cycle{cycle}_{date_tag}.csv"
     filepath  = os.path.join(OUTPUT_DIR, filename)
 
     df = (
@@ -113,56 +102,7 @@ def save_to_excel(records: list[dict], cycle: int):
         .reset_index(drop=True)
     )
 
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "rent_commercial_cleaned"
-
-    headers = ["area(m²)", "rent(EGP)", "location_en"]
-    for col_idx, header in enumerate(headers, 1):
-        cell            = ws.cell(row=1, column=col_idx, value=header)
-        cell.font       = HEADER_FONT
-        cell.fill       = HEADER_FILL
-        cell.alignment  = Alignment(horizontal="center", vertical="center")
-        cell.border     = THIN_BORDER
-
-    ws.row_dimensions[1].height = 22
-
-    for row_idx, row in df.iterrows():
-        excel_row = row_idx + 2
-        fill = EVEN_FILL if row_idx % 2 == 0 else PatternFill()
-        for col_idx, col_name in enumerate(headers, 1):
-            cell           = ws.cell(row=excel_row, column=col_idx, value=row[col_name])
-            cell.font      = DATA_FONT
-            cell.fill      = fill
-            cell.border    = THIN_BORDER
-            cell.alignment = Alignment(
-                horizontal="center" if col_idx < 3 else "left",
-                vertical="center",
-            )
-
-    for col_letter, width in COL_WIDTHS.items():
-        ws.column_dimensions[col_letter].width = width
-
-    # ── Summary row ──────────────────────────────────────────────────────────
-    last_data_row = len(df) + 1
-    summary_row   = last_data_row + 2
-    ws.cell(row=summary_row, column=1, value="Total Records")
-    ws.cell(row=summary_row, column=2, value=f"=COUNTA(B2:B{last_data_row})")
-    ws.cell(row=summary_row, column=1).font = Font(name="Arial", bold=True, size=10)
-
-    ws.cell(row=summary_row + 1, column=1, value="Avg Rent (EGP)")
-    ws.cell(row=summary_row + 1, column=2, value=f"=AVERAGE(B2:B{last_data_row})")
-    ws.cell(row=summary_row + 1, column=1).font = Font(name="Arial", bold=True, size=10)
-
-    ws.cell(row=summary_row + 2, column=1, value="Avg Area (m²)")
-    ws.cell(row=summary_row + 2, column=2, value=f"=AVERAGE(A2:A{last_data_row})")
-    ws.cell(row=summary_row + 2, column=1).font = Font(name="Arial", bold=True, size=10)
-
-    ws.cell(row=summary_row + 3, column=1, value="Scraped At")
-    ws.cell(row=summary_row + 3, column=2, value=datetime.now().strftime("%Y-%m-%d"))
-    ws.cell(row=summary_row + 3, column=1).font = Font(name="Arial", bold=True, size=10)
-
-    wb.save(filepath)
+    df.to_csv(filepath, index=False, encoding="utf-8-sig")
     log.info(f"Saved {len(df)} records → {filepath}")
     return filepath
 
@@ -198,7 +138,7 @@ def run():
         consumer.close()
 
     if buffer:
-        path = save_to_excel(buffer, cycle)
+        path = save_to_csv(buffer, cycle)
         log.info(f"Cycle {cycle}: {len(buffer)} clean records saved → {path}")
     else:
         log.warning("No valid records received in this cycle.")
@@ -206,5 +146,5 @@ def run():
 
 if __name__ == "__main__":
     # كل مرة بيتشغل المستهلك (بعد ما الـ Scheduler يشغل الـ Producer)
-    # بيستهلك كل الـ events الجديدة ويحفظهم في Excel
+    # بيستهلك كل الـ events الجديدة ويحفظهم في CSV
     run()

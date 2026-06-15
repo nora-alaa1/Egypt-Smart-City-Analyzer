@@ -1,0 +1,613 @@
+score_id,area_id,area_name,business_type_id,category,subcategory,competitor_count,nearest_competitor_m,population,school_count,demand_index,market_saturation,suitability_score,recommended
+1,1,Abis,1,Financial Services,Bank & Exchange,0,0,5000,0,5000,0,7.75,True
+2,1,Abis,2,Food & Beverage,Bakery,0,0,5000,0,5000,0,7.75,True
+3,1,Abis,3,Food & Beverage,Cafe,0,0,5000,0,5000,0,7.75,True
+4,1,Abis,4,Food & Beverage,Ice Cream & Sweets,0,0,5000,0,5000,0,7.75,True
+5,1,Abis,5,Food & Beverage,Restaurant,0,0,5000,0,5000,0,7.75,True
+6,1,Abis,6,Health & Fitness,Fitness Center,0,0,5000,0,5000,0,7.75,True
+7,1,Abis,7,Healthcare,Hospital & Clinic,0,0,5000,0,5000,0,7.75,True
+8,1,Abis,8,Healthcare,Pharmacy,0,0,5000,0,5000,0,7.75,True
+9,1,Abis,9,Retail,Clothing & Fashion,0,0,5000,0,5000,0,7.75,True
+10,1,Abis,10,Retail,Supermarket & Grocery,0,0,5000,0,5000,0,7.75,True
+11,1,Abis,11,Tourism & Hospitality,Hotel,0,0,5000,0,5000,0,7.75,True
+12,2,Abu Qir,1,Financial Services,Bank & Exchange,0,0,4000,0,4000,0,6.8,True
+13,2,Abu Qir,2,Food & Beverage,Bakery,0,0,4000,0,4000,0,6.8,True
+14,2,Abu Qir,3,Food & Beverage,Cafe,0,0,4000,0,4000,0,6.8,True
+15,2,Abu Qir,4,Food & Beverage,Ice Cream & Sweets,0,0,4000,0,4000,0,6.8,True
+16,2,Abu Qir,5,Food & Beverage,Restaurant,0,0,4000,0,4000,0,6.8,True
+17,2,Abu Qir,6,Health & Fitness,Fitness Center,0,0,4000,0,4000,0,6.8,True
+18,2,Abu Qir,7,Healthcare,Hospital & Clinic,0,0,4000,0,4000,0,6.8,True
+19,2,Abu Qir,8,Healthcare,Pharmacy,0,0,4000,0,4000,0,6.8,True
+20,2,Abu Qir,9,Retail,Clothing & Fashion,0,0,4000,0,4000,0,6.8,True
+21,2,Abu Qir,10,Retail,Supermarket & Grocery,0,0,4000,0,4000,0,6.8,True
+22,2,Abu Qir,11,Tourism & Hospitality,Hotel,0,0,4000,0,4000,0,6.8,True
+23,3,Abu Youssef,1,Financial Services,Bank & Exchange,0,0,16000,0,16000,0,9.4,True
+24,3,Abu Youssef,2,Food & Beverage,Bakery,0,0,16000,0,16000,0,9.4,True
+25,3,Abu Youssef,3,Food & Beverage,Cafe,0,0,16000,0,16000,0,9.4,True
+26,3,Abu Youssef,4,Food & Beverage,Ice Cream & Sweets,0,0,16000,0,16000,0,9.4,True
+27,3,Abu Youssef,5,Food & Beverage,Restaurant,0,0,16000,0,16000,0,9.4,True
+28,3,Abu Youssef,6,Health & Fitness,Fitness Center,0,0,16000,0,16000,0,9.4,True
+29,3,Abu Youssef,7,Healthcare,Hospital & Clinic,0,0,16000,0,16000,0,9.4,True
+30,3,Abu Youssef,8,Healthcare,Pharmacy,0,0,16000,0,16000,0,9.4,True
+31,3,Abu Youssef,9,Retail,Clothing & Fashion,0,0,16000,0,16000,0,9.4,True
+32,3,Abu Youssef,10,Retail,Supermarket & Grocery,0,0,16000,0,16000,0,9.4,True
+33,3,Abu Youssef,11,Tourism & Hospitality,Hotel,0,0,16000,0,16000,0,9.4,True
+34,4,Ard El Sobhiya,1,Financial Services,Bank & Exchange,0,0,9000,0,9000,0,8.35,True
+35,4,Ard El Sobhiya,2,Food & Beverage,Bakery,0,0,9000,0,9000,0,8.35,True
+36,4,Ard El Sobhiya,3,Food & Beverage,Cafe,0,0,9000,0,9000,0,8.35,True
+37,4,Ard El Sobhiya,4,Food & Beverage,Ice Cream & Sweets,0,0,9000,0,9000,0,8.35,True
+38,4,Ard El Sobhiya,5,Food & Beverage,Restaurant,0,0,9000,0,9000,0,8.35,True
+39,4,Ard El Sobhiya,6,Health & Fitness,Fitness Center,0,0,9000,0,9000,0,8.35,True
+40,4,Ard El Sobhiya,7,Healthcare,Hospital & Clinic,0,0,9000,0,9000,0,8.35,True
+41,4,Ard El Sobhiya,8,Healthcare,Pharmacy,0,0,9000,0,9000,0,8.35,True
+42,4,Ard El Sobhiya,9,Retail,Clothing & Fashion,0,0,9000,0,9000,0,8.35,True
+43,4,Ard El Sobhiya,10,Retail,Supermarket & Grocery,0,0,9000,0,9000,0,8.35,True
+44,4,Ard El Sobhiya,11,Tourism & Hospitality,Hotel,0,0,9000,0,9000,0,8.35,True
+45,5,Attarin,1,Financial Services,Bank & Exchange,0,0,20000,0,20000,0,10,True
+46,5,Attarin,2,Food & Beverage,Bakery,0,0,20000,0,20000,0,10,True
+47,5,Attarin,3,Food & Beverage,Cafe,0,0,20000,0,20000,0,10,True
+48,5,Attarin,4,Food & Beverage,Ice Cream & Sweets,0,0,20000,0,20000,0,10,True
+49,5,Attarin,5,Food & Beverage,Restaurant,0,0,20000,0,20000,0,10,True
+50,5,Attarin,6,Health & Fitness,Fitness Center,0,0,20000,0,20000,0,10,True
+51,5,Attarin,7,Healthcare,Hospital & Clinic,0,0,20000,0,20000,0,10,True
+52,5,Attarin,8,Healthcare,Pharmacy,0,0,20000,0,20000,0,10,True
+53,5,Attarin,9,Retail,Clothing & Fashion,0,0,20000,0,20000,0,10,True
+54,5,Attarin,10,Retail,Supermarket & Grocery,0,0,20000,0,20000,0,10,True
+55,5,Attarin,11,Tourism & Hospitality,Hotel,0,0,20000,0,20000,0,10,True
+56,6,Bab El Hadid,1,Financial Services,Bank & Exchange,0,0,20000,0,20000,0,10,True
+57,6,Bab El Hadid,2,Food & Beverage,Bakery,0,0,20000,0,20000,0,10,True
+58,6,Bab El Hadid,3,Food & Beverage,Cafe,0,0,20000,0,20000,0,10,True
+59,6,Bab El Hadid,4,Food & Beverage,Ice Cream & Sweets,0,0,20000,0,20000,0,10,True
+60,6,Bab El Hadid,5,Food & Beverage,Restaurant,0,0,20000,0,20000,0,10,True
+61,6,Bab El Hadid,6,Health & Fitness,Fitness Center,0,0,20000,0,20000,0,10,True
+62,6,Bab El Hadid,7,Healthcare,Hospital & Clinic,0,0,20000,0,20000,0,10,True
+63,6,Bab El Hadid,8,Healthcare,Pharmacy,0,0,20000,0,20000,0,10,True
+64,6,Bab El Hadid,9,Retail,Clothing & Fashion,0,0,20000,0,20000,0,10,True
+65,6,Bab El Hadid,10,Retail,Supermarket & Grocery,0,0,20000,0,20000,0,10,True
+66,6,Bab El Hadid,11,Tourism & Hospitality,Hotel,0,0,20000,0,20000,0,10,True
+67,7,Borg El Arab,1,Financial Services,Bank & Exchange,0,0,2000,0,2000,0,4.9,False
+68,7,Borg El Arab,2,Food & Beverage,Bakery,0,0,2000,0,2000,0,4.9,False
+69,7,Borg El Arab,3,Food & Beverage,Cafe,0,0,2000,0,2000,0,4.9,False
+70,7,Borg El Arab,4,Food & Beverage,Ice Cream & Sweets,0,0,2000,0,2000,0,4.9,False
+71,7,Borg El Arab,5,Food & Beverage,Restaurant,0,0,2000,0,2000,0,4.9,False
+72,7,Borg El Arab,6,Health & Fitness,Fitness Center,0,0,2000,0,2000,0,4.9,False
+73,7,Borg El Arab,7,Healthcare,Hospital & Clinic,0,0,2000,0,2000,0,4.9,False
+74,7,Borg El Arab,8,Healthcare,Pharmacy,0,0,2000,0,2000,0,4.9,False
+75,7,Borg El Arab,9,Retail,Clothing & Fashion,0,0,2000,0,2000,0,4.9,False
+76,7,Borg El Arab,10,Retail,Supermarket & Grocery,0,0,2000,0,2000,0,4.9,False
+77,7,Borg El Arab,11,Tourism & Hospitality,Hotel,0,0,2000,0,2000,0,4.9,False
+78,8,Boulkly,1,Financial Services,Bank & Exchange,0,0,11000,0,11000,0,8.65,True
+79,8,Boulkly,2,Food & Beverage,Bakery,0,0,11000,0,11000,0,8.65,True
+80,8,Boulkly,3,Food & Beverage,Cafe,0,0,11000,0,11000,0,8.65,True
+81,8,Boulkly,4,Food & Beverage,Ice Cream & Sweets,0,0,11000,0,11000,0,8.65,True
+82,8,Boulkly,5,Food & Beverage,Restaurant,0,0,11000,0,11000,0,8.65,True
+83,8,Boulkly,6,Health & Fitness,Fitness Center,0,0,11000,0,11000,0,8.65,True
+84,8,Boulkly,7,Healthcare,Hospital & Clinic,0,0,11000,0,11000,0,8.65,True
+85,8,Boulkly,8,Healthcare,Pharmacy,0,0,11000,0,11000,0,8.65,True
+86,8,Boulkly,9,Retail,Clothing & Fashion,0,0,11000,0,11000,0,8.65,True
+87,8,Boulkly,10,Retail,Supermarket & Grocery,0,0,11000,0,11000,0,8.65,True
+88,8,Boulkly,11,Tourism & Hospitality,Hotel,0,0,11000,0,11000,0,8.65,True
+89,9,Camp Shezar,1,Financial Services,Bank & Exchange,0,0,13500,0,13500,0,9.03,True
+90,9,Camp Shezar,2,Food & Beverage,Bakery,0,0,13500,0,13500,0,9.03,True
+91,9,Camp Shezar,3,Food & Beverage,Cafe,0,0,13500,0,13500,0,9.03,True
+92,9,Camp Shezar,4,Food & Beverage,Ice Cream & Sweets,0,0,13500,0,13500,0,9.03,True
+93,9,Camp Shezar,5,Food & Beverage,Restaurant,0,0,13500,0,13500,0,9.03,True
+94,9,Camp Shezar,6,Health & Fitness,Fitness Center,0,0,13500,0,13500,0,9.03,True
+95,9,Camp Shezar,7,Healthcare,Hospital & Clinic,0,0,13500,0,13500,0,9.03,True
+96,9,Camp Shezar,8,Healthcare,Pharmacy,0,0,13500,0,13500,0,9.03,True
+97,9,Camp Shezar,9,Retail,Clothing & Fashion,0,0,13500,0,13500,0,9.03,True
+98,9,Camp Shezar,10,Retail,Supermarket & Grocery,0,0,13500,0,13500,0,9.03,True
+99,9,Camp Shezar,11,Tourism & Hospitality,Hotel,0,0,13500,0,13500,0,9.03,True
+100,10,Chatby,1,Financial Services,Bank & Exchange,0,0,13000,0,13000,0,8.95,True
+101,10,Chatby,2,Food & Beverage,Bakery,0,0,13000,0,13000,0,8.95,True
+102,10,Chatby,3,Food & Beverage,Cafe,0,0,13000,0,13000,0,8.95,True
+103,10,Chatby,4,Food & Beverage,Ice Cream & Sweets,0,0,13000,0,13000,0,8.95,True
+104,10,Chatby,5,Food & Beverage,Restaurant,0,0,13000,0,13000,0,8.95,True
+105,10,Chatby,6,Health & Fitness,Fitness Center,0,0,13000,0,13000,0,8.95,True
+106,10,Chatby,7,Healthcare,Hospital & Clinic,0,0,13000,0,13000,0,8.95,True
+107,10,Chatby,8,Healthcare,Pharmacy,0,0,13000,0,13000,0,8.95,True
+108,10,Chatby,9,Retail,Clothing & Fashion,0,0,13000,0,13000,0,8.95,True
+109,10,Chatby,10,Retail,Supermarket & Grocery,0,0,13000,0,13000,0,8.95,True
+110,10,Chatby,11,Tourism & Hospitality,Hotel,0,0,13000,0,13000,0,8.95,True
+111,11,Cleopatra,1,Financial Services,Bank & Exchange,0,0,14000,0,14000,0,9.1,True
+112,11,Cleopatra,2,Food & Beverage,Bakery,0,0,14000,0,14000,0,9.1,True
+113,11,Cleopatra,3,Food & Beverage,Cafe,0,0,14000,0,14000,0,9.1,True
+114,11,Cleopatra,4,Food & Beverage,Ice Cream & Sweets,0,0,14000,0,14000,0,9.1,True
+115,11,Cleopatra,5,Food & Beverage,Restaurant,0,0,14000,0,14000,0,9.1,True
+116,11,Cleopatra,6,Health & Fitness,Fitness Center,0,0,14000,0,14000,0,9.1,True
+117,11,Cleopatra,7,Healthcare,Hospital & Clinic,0,0,14000,0,14000,0,9.1,True
+118,11,Cleopatra,8,Healthcare,Pharmacy,0,0,14000,0,14000,0,9.1,True
+119,11,Cleopatra,9,Retail,Clothing & Fashion,0,0,14000,0,14000,0,9.1,True
+120,11,Cleopatra,10,Retail,Supermarket & Grocery,0,0,14000,0,14000,0,9.1,True
+121,11,Cleopatra,11,Tourism & Hospitality,Hotel,0,0,14000,0,14000,0,9.1,True
+122,12,Cleopatra Hamamat,1,Financial Services,Bank & Exchange,0,0,9000,0,9000,0,8.35,True
+123,12,Cleopatra Hamamat,2,Food & Beverage,Bakery,0,0,9000,0,9000,0,8.35,True
+124,12,Cleopatra Hamamat,3,Food & Beverage,Cafe,0,0,9000,0,9000,0,8.35,True
+125,12,Cleopatra Hamamat,4,Food & Beverage,Ice Cream & Sweets,0,0,9000,0,9000,0,8.35,True
+126,12,Cleopatra Hamamat,5,Food & Beverage,Restaurant,0,0,9000,0,9000,0,8.35,True
+127,12,Cleopatra Hamamat,6,Health & Fitness,Fitness Center,0,0,9000,0,9000,0,8.35,True
+128,12,Cleopatra Hamamat,7,Healthcare,Hospital & Clinic,0,0,9000,0,9000,0,8.35,True
+129,12,Cleopatra Hamamat,8,Healthcare,Pharmacy,0,0,9000,0,9000,0,8.35,True
+130,12,Cleopatra Hamamat,9,Retail,Clothing & Fashion,0,0,9000,0,9000,0,8.35,True
+131,12,Cleopatra Hamamat,10,Retail,Supermarket & Grocery,0,0,9000,0,9000,0,8.35,True
+132,12,Cleopatra Hamamat,11,Tourism & Hospitality,Hotel,0,0,9000,0,9000,0,8.35,True
+133,13,El Agamy,1,Financial Services,Bank & Exchange,0,0,6000,0,6000,0,7.9,True
+134,13,El Agamy,2,Food & Beverage,Bakery,0,0,6000,0,6000,0,7.9,True
+135,13,El Agamy,3,Food & Beverage,Cafe,0,0,6000,0,6000,0,7.9,True
+136,13,El Agamy,4,Food & Beverage,Ice Cream & Sweets,0,0,6000,0,6000,0,7.9,True
+137,13,El Agamy,5,Food & Beverage,Restaurant,0,0,6000,0,6000,0,7.9,True
+138,13,El Agamy,6,Health & Fitness,Fitness Center,0,0,6000,0,6000,0,7.9,True
+139,13,El Agamy,7,Healthcare,Hospital & Clinic,0,0,6000,0,6000,0,7.9,True
+140,13,El Agamy,8,Healthcare,Pharmacy,0,0,6000,0,6000,0,7.9,True
+141,13,El Agamy,9,Retail,Clothing & Fashion,0,0,6000,0,6000,0,7.9,True
+142,13,El Agamy,10,Retail,Supermarket & Grocery,0,0,6000,0,6000,0,7.9,True
+143,13,El Agamy,11,Tourism & Hospitality,Hotel,0,0,6000,0,6000,0,7.9,True
+144,14,El Anfushi,1,Financial Services,Bank & Exchange,0,0,16000,0,16000,0,9.4,True
+145,14,El Anfushi,2,Food & Beverage,Bakery,0,0,16000,0,16000,0,9.4,True
+146,14,El Anfushi,3,Food & Beverage,Cafe,0,0,16000,0,16000,0,9.4,True
+147,14,El Anfushi,4,Food & Beverage,Ice Cream & Sweets,0,0,16000,0,16000,0,9.4,True
+148,14,El Anfushi,5,Food & Beverage,Restaurant,0,0,16000,0,16000,0,9.4,True
+149,14,El Anfushi,6,Health & Fitness,Fitness Center,0,0,16000,0,16000,0,9.4,True
+150,14,El Anfushi,7,Healthcare,Hospital & Clinic,0,0,16000,0,16000,0,9.4,True
+151,14,El Anfushi,8,Healthcare,Pharmacy,0,0,16000,0,16000,0,9.4,True
+152,14,El Anfushi,9,Retail,Clothing & Fashion,0,0,16000,0,16000,0,9.4,True
+153,14,El Anfushi,10,Retail,Supermarket & Grocery,0,0,16000,0,16000,0,9.4,True
+154,14,El Anfushi,11,Tourism & Hospitality,Hotel,0,0,16000,0,16000,0,9.4,True
+155,15,El Asafra,1,Financial Services,Bank & Exchange,0,0,10500,0,10500,0,8.58,True
+156,15,El Asafra,2,Food & Beverage,Bakery,0,0,10500,0,10500,0,8.58,True
+157,15,El Asafra,3,Food & Beverage,Cafe,0,0,10500,0,10500,0,8.58,True
+158,15,El Asafra,4,Food & Beverage,Ice Cream & Sweets,0,0,10500,0,10500,0,8.58,True
+159,15,El Asafra,5,Food & Beverage,Restaurant,0,0,10500,0,10500,0,8.58,True
+160,15,El Asafra,6,Health & Fitness,Fitness Center,0,0,10500,0,10500,0,8.58,True
+161,15,El Asafra,7,Healthcare,Hospital & Clinic,0,0,10500,0,10500,0,8.58,True
+162,15,El Asafra,8,Healthcare,Pharmacy,0,0,10500,0,10500,0,8.58,True
+163,15,El Asafra,9,Retail,Clothing & Fashion,0,0,10500,0,10500,0,8.58,True
+164,15,El Asafra,10,Retail,Supermarket & Grocery,0,0,10500,0,10500,0,8.58,True
+165,15,El Asafra,11,Tourism & Hospitality,Hotel,0,0,10500,0,10500,0,8.58,True
+166,16,El Azarita,1,Financial Services,Bank & Exchange,0,0,20000,0,20000,0,10,True
+167,16,El Azarita,2,Food & Beverage,Bakery,0,0,20000,0,20000,0,10,True
+168,16,El Azarita,3,Food & Beverage,Cafe,0,0,20000,0,20000,0,10,True
+169,16,El Azarita,4,Food & Beverage,Ice Cream & Sweets,0,0,20000,0,20000,0,10,True
+170,16,El Azarita,5,Food & Beverage,Restaurant,0,0,20000,0,20000,0,10,True
+171,16,El Azarita,6,Health & Fitness,Fitness Center,0,0,20000,0,20000,0,10,True
+172,16,El Azarita,7,Healthcare,Hospital & Clinic,0,0,20000,0,20000,0,10,True
+173,16,El Azarita,8,Healthcare,Pharmacy,0,0,20000,0,20000,0,10,True
+174,16,El Azarita,9,Retail,Clothing & Fashion,0,0,20000,0,20000,0,10,True
+175,16,El Azarita,10,Retail,Supermarket & Grocery,0,0,20000,0,20000,0,10,True
+176,16,El Azarita,11,Tourism & Hospitality,Hotel,0,0,20000,0,20000,0,10,True
+177,17,El Dekhela,1,Financial Services,Bank & Exchange,0,0,7000,0,7000,0,8.05,True
+178,17,El Dekhela,2,Food & Beverage,Bakery,0,0,7000,0,7000,0,8.05,True
+179,17,El Dekhela,3,Food & Beverage,Cafe,0,0,7000,0,7000,0,8.05,True
+180,17,El Dekhela,4,Food & Beverage,Ice Cream & Sweets,0,0,7000,0,7000,0,8.05,True
+181,17,El Dekhela,5,Food & Beverage,Restaurant,0,0,7000,0,7000,0,8.05,True
+182,17,El Dekhela,6,Health & Fitness,Fitness Center,0,0,7000,0,7000,0,8.05,True
+183,17,El Dekhela,7,Healthcare,Hospital & Clinic,0,0,7000,0,7000,0,8.05,True
+184,17,El Dekhela,8,Healthcare,Pharmacy,0,0,7000,0,7000,0,8.05,True
+185,17,El Dekhela,9,Retail,Clothing & Fashion,0,0,7000,0,7000,0,8.05,True
+186,17,El Dekhela,10,Retail,Supermarket & Grocery,0,0,7000,0,7000,0,8.05,True
+187,17,El Dekhela,11,Tourism & Hospitality,Hotel,0,0,7000,0,7000,0,8.05,True
+188,18,El Ekbal,1,Financial Services,Bank & Exchange,0,0,11000,0,11000,0,8.65,True
+189,18,El Ekbal,2,Food & Beverage,Bakery,0,0,11000,0,11000,0,8.65,True
+190,18,El Ekbal,3,Food & Beverage,Cafe,0,0,11000,0,11000,0,8.65,True
+191,18,El Ekbal,4,Food & Beverage,Ice Cream & Sweets,0,0,11000,0,11000,0,8.65,True
+192,18,El Ekbal,5,Food & Beverage,Restaurant,0,0,11000,0,11000,0,8.65,True
+193,18,El Ekbal,6,Health & Fitness,Fitness Center,0,0,11000,0,11000,0,8.65,True
+194,18,El Ekbal,7,Healthcare,Hospital & Clinic,0,0,11000,0,11000,0,8.65,True
+195,18,El Ekbal,8,Healthcare,Pharmacy,0,0,11000,0,11000,0,8.65,True
+196,18,El Ekbal,9,Retail,Clothing & Fashion,0,0,11000,0,11000,0,8.65,True
+197,18,El Ekbal,10,Retail,Supermarket & Grocery,0,0,11000,0,11000,0,8.65,True
+198,18,El Ekbal,11,Tourism & Hospitality,Hotel,0,0,11000,0,11000,0,8.65,True
+199,19,El Gomrok (Bahary),1,Financial Services,Bank & Exchange,0,0,22000,0,22000,0,10,True
+200,19,El Gomrok (Bahary),2,Food & Beverage,Bakery,0,0,22000,0,22000,0,10,True
+201,19,El Gomrok (Bahary),3,Food & Beverage,Cafe,0,0,22000,0,22000,0,10,True
+202,19,El Gomrok (Bahary),4,Food & Beverage,Ice Cream & Sweets,0,0,22000,0,22000,0,10,True
+203,19,El Gomrok (Bahary),5,Food & Beverage,Restaurant,0,0,22000,0,22000,0,10,True
+204,19,El Gomrok (Bahary),6,Health & Fitness,Fitness Center,0,0,22000,0,22000,0,10,True
+205,19,El Gomrok (Bahary),7,Healthcare,Hospital & Clinic,0,0,22000,0,22000,0,10,True
+206,19,El Gomrok (Bahary),8,Healthcare,Pharmacy,0,0,22000,0,22000,0,10,True
+207,19,El Gomrok (Bahary),9,Retail,Clothing & Fashion,0,0,22000,0,22000,0,10,True
+208,19,El Gomrok (Bahary),10,Retail,Supermarket & Grocery,0,0,22000,0,22000,0,10,True
+209,19,El Gomrok (Bahary),11,Tourism & Hospitality,Hotel,0,0,22000,0,22000,0,10,True
+210,20,El Hadra,1,Financial Services,Bank & Exchange,0,0,22000,0,22000,0,10,True
+211,20,El Hadra,2,Food & Beverage,Bakery,0,0,22000,0,22000,0,10,True
+212,20,El Hadra,3,Food & Beverage,Cafe,0,0,22000,0,22000,0,10,True
+213,20,El Hadra,4,Food & Beverage,Ice Cream & Sweets,0,0,22000,0,22000,0,10,True
+214,20,El Hadra,5,Food & Beverage,Restaurant,0,0,22000,0,22000,0,10,True
+215,20,El Hadra,6,Health & Fitness,Fitness Center,0,0,22000,0,22000,0,10,True
+216,20,El Hadra,7,Healthcare,Hospital & Clinic,0,0,22000,0,22000,0,10,True
+217,20,El Hadra,8,Healthcare,Pharmacy,0,0,22000,0,22000,0,10,True
+218,20,El Hadra,9,Retail,Clothing & Fashion,0,0,22000,0,22000,0,10,True
+219,20,El Hadra,10,Retail,Supermarket & Grocery,0,0,22000,0,22000,0,10,True
+220,20,El Hadra,11,Tourism & Hospitality,Hotel,0,0,22000,0,22000,0,10,True
+221,21,El Ibrahimiya,1,Financial Services,Bank & Exchange,0,0,15000,0,15000,0,9.25,True
+222,21,El Ibrahimiya,2,Food & Beverage,Bakery,0,0,15000,0,15000,0,9.25,True
+223,21,El Ibrahimiya,3,Food & Beverage,Cafe,0,0,15000,0,15000,0,9.25,True
+224,21,El Ibrahimiya,4,Food & Beverage,Ice Cream & Sweets,0,0,15000,0,15000,0,9.25,True
+225,21,El Ibrahimiya,5,Food & Beverage,Restaurant,0,0,15000,0,15000,0,9.25,True
+226,21,El Ibrahimiya,6,Health & Fitness,Fitness Center,0,0,15000,0,15000,0,9.25,True
+227,21,El Ibrahimiya,7,Healthcare,Hospital & Clinic,0,0,15000,0,15000,0,9.25,True
+228,21,El Ibrahimiya,8,Healthcare,Pharmacy,0,0,15000,0,15000,0,9.25,True
+229,21,El Ibrahimiya,9,Retail,Clothing & Fashion,0,0,15000,0,15000,0,9.25,True
+230,21,El Ibrahimiya,10,Retail,Supermarket & Grocery,0,0,15000,0,15000,0,9.25,True
+231,21,El Ibrahimiya,11,Tourism & Hospitality,Hotel,0,0,15000,0,15000,0,9.25,True
+232,22,El Maamoura,1,Financial Services,Bank & Exchange,0,0,7500,0,7500,0,8.13,True
+233,22,El Maamoura,2,Food & Beverage,Bakery,0,0,7500,0,7500,0,8.13,True
+234,22,El Maamoura,3,Food & Beverage,Cafe,0,0,7500,0,7500,0,8.13,True
+235,22,El Maamoura,4,Food & Beverage,Ice Cream & Sweets,0,0,7500,0,7500,0,8.13,True
+236,22,El Maamoura,5,Food & Beverage,Restaurant,0,0,7500,0,7500,0,8.13,True
+237,22,El Maamoura,6,Health & Fitness,Fitness Center,0,0,7500,0,7500,0,8.13,True
+238,22,El Maamoura,7,Healthcare,Hospital & Clinic,0,0,7500,0,7500,0,8.13,True
+239,22,El Maamoura,8,Healthcare,Pharmacy,0,0,7500,0,7500,0,8.13,True
+240,22,El Maamoura,9,Retail,Clothing & Fashion,0,0,7500,0,7500,0,8.13,True
+241,22,El Maamoura,10,Retail,Supermarket & Grocery,0,0,7500,0,7500,0,8.13,True
+242,22,El Maamoura,11,Tourism & Hospitality,Hotel,0,0,7500,0,7500,0,8.13,True
+243,23,El Mandara,1,Financial Services,Bank & Exchange,0,0,9000,0,9000,0,8.35,True
+244,23,El Mandara,2,Food & Beverage,Bakery,0,0,9000,0,9000,0,8.35,True
+245,23,El Mandara,3,Food & Beverage,Cafe,0,0,9000,0,9000,0,8.35,True
+246,23,El Mandara,4,Food & Beverage,Ice Cream & Sweets,0,0,9000,0,9000,0,8.35,True
+247,23,El Mandara,5,Food & Beverage,Restaurant,0,0,9000,0,9000,0,8.35,True
+248,23,El Mandara,6,Health & Fitness,Fitness Center,0,0,9000,0,9000,0,8.35,True
+249,23,El Mandara,7,Healthcare,Hospital & Clinic,0,0,9000,0,9000,0,8.35,True
+250,23,El Mandara,8,Healthcare,Pharmacy,0,0,9000,0,9000,0,8.35,True
+251,23,El Mandara,9,Retail,Clothing & Fashion,0,0,9000,0,9000,0,8.35,True
+252,23,El Mandara,10,Retail,Supermarket & Grocery,0,0,9000,0,9000,0,8.35,True
+253,23,El Mandara,11,Tourism & Hospitality,Hotel,0,0,9000,0,9000,0,8.35,True
+254,24,El Montazah,1,Financial Services,Bank & Exchange,0,0,8000,0,8000,0,8.2,True
+255,24,El Montazah,2,Food & Beverage,Bakery,0,0,8000,0,8000,0,8.2,True
+256,24,El Montazah,3,Food & Beverage,Cafe,0,0,8000,0,8000,0,8.2,True
+257,24,El Montazah,4,Food & Beverage,Ice Cream & Sweets,0,0,8000,0,8000,0,8.2,True
+258,24,El Montazah,5,Food & Beverage,Restaurant,0,0,8000,0,8000,0,8.2,True
+259,24,El Montazah,6,Health & Fitness,Fitness Center,0,0,8000,0,8000,0,8.2,True
+260,24,El Montazah,7,Healthcare,Hospital & Clinic,0,0,8000,0,8000,0,8.2,True
+261,24,El Montazah,8,Healthcare,Pharmacy,0,0,8000,0,8000,0,8.2,True
+262,24,El Montazah,9,Retail,Clothing & Fashion,0,0,8000,0,8000,0,8.2,True
+263,24,El Montazah,10,Retail,Supermarket & Grocery,0,0,8000,0,8000,0,8.2,True
+264,24,El Montazah,11,Tourism & Hospitality,Hotel,0,0,8000,0,8000,0,8.2,True
+265,25,El Nozha,1,Financial Services,Bank & Exchange,0,0,8500,0,8500,0,8.28,True
+266,25,El Nozha,2,Food & Beverage,Bakery,0,0,8500,0,8500,0,8.28,True
+267,25,El Nozha,3,Food & Beverage,Cafe,0,0,8500,0,8500,0,8.28,True
+268,25,El Nozha,4,Food & Beverage,Ice Cream & Sweets,0,0,8500,0,8500,0,8.28,True
+269,25,El Nozha,5,Food & Beverage,Restaurant,0,0,8500,0,8500,0,8.28,True
+270,25,El Nozha,6,Health & Fitness,Fitness Center,0,0,8500,0,8500,0,8.28,True
+271,25,El Nozha,7,Healthcare,Hospital & Clinic,0,0,8500,0,8500,0,8.28,True
+272,25,El Nozha,8,Healthcare,Pharmacy,0,0,8500,0,8500,0,8.28,True
+273,25,El Nozha,9,Retail,Clothing & Fashion,0,0,8500,0,8500,0,8.28,True
+274,25,El Nozha,10,Retail,Supermarket & Grocery,0,0,8500,0,8500,0,8.28,True
+275,25,El Nozha,11,Tourism & Hospitality,Hotel,0,0,8500,0,8500,0,8.28,True
+276,26,El Shatby,1,Financial Services,Bank & Exchange,0,0,14000,0,14000,0,9.1,True
+277,26,El Shatby,2,Food & Beverage,Bakery,0,0,14000,0,14000,0,9.1,True
+278,26,El Shatby,3,Food & Beverage,Cafe,0,0,14000,0,14000,0,9.1,True
+279,26,El Shatby,4,Food & Beverage,Ice Cream & Sweets,0,0,14000,0,14000,0,9.1,True
+280,26,El Shatby,5,Food & Beverage,Restaurant,0,0,14000,0,14000,0,9.1,True
+281,26,El Shatby,6,Health & Fitness,Fitness Center,0,0,14000,0,14000,0,9.1,True
+282,26,El Shatby,7,Healthcare,Hospital & Clinic,0,0,14000,0,14000,0,9.1,True
+283,26,El Shatby,8,Healthcare,Pharmacy,0,0,14000,0,14000,0,9.1,True
+284,26,El Shatby,9,Retail,Clothing & Fashion,0,0,14000,0,14000,0,9.1,True
+285,26,El Shatby,10,Retail,Supermarket & Grocery,0,0,14000,0,14000,0,9.1,True
+286,26,El Shatby,11,Tourism & Hospitality,Hotel,0,0,14000,0,14000,0,9.1,True
+287,27,El Shotbi,1,Financial Services,Bank & Exchange,0,0,19000,0,19000,0,9.85,True
+288,27,El Shotbi,2,Food & Beverage,Bakery,0,0,19000,0,19000,0,9.85,True
+289,27,El Shotbi,3,Food & Beverage,Cafe,0,0,19000,0,19000,0,9.85,True
+290,27,El Shotbi,4,Food & Beverage,Ice Cream & Sweets,0,0,19000,0,19000,0,9.85,True
+291,27,El Shotbi,5,Food & Beverage,Restaurant,0,0,19000,0,19000,0,9.85,True
+292,27,El Shotbi,6,Health & Fitness,Fitness Center,0,0,19000,0,19000,0,9.85,True
+293,27,El Shotbi,7,Healthcare,Hospital & Clinic,0,0,19000,0,19000,0,9.85,True
+294,27,El Shotbi,8,Healthcare,Pharmacy,0,0,19000,0,19000,0,9.85,True
+295,27,El Shotbi,9,Retail,Clothing & Fashion,0,0,19000,0,19000,0,9.85,True
+296,27,El Shotbi,10,Retail,Supermarket & Grocery,0,0,19000,0,19000,0,9.85,True
+297,27,El Shotbi,11,Tourism & Hospitality,Hotel,0,0,19000,0,19000,0,9.85,True
+298,28,El Wardian,1,Financial Services,Bank & Exchange,0,0,20000,0,20000,0,10,True
+299,28,El Wardian,2,Food & Beverage,Bakery,0,0,20000,0,20000,0,10,True
+300,28,El Wardian,3,Food & Beverage,Cafe,0,0,20000,0,20000,0,10,True
+301,28,El Wardian,4,Food & Beverage,Ice Cream & Sweets,0,0,20000,0,20000,0,10,True
+302,28,El Wardian,5,Food & Beverage,Restaurant,0,0,20000,0,20000,0,10,True
+303,28,El Wardian,6,Health & Fitness,Fitness Center,0,0,20000,0,20000,0,10,True
+304,28,El Wardian,7,Healthcare,Hospital & Clinic,0,0,20000,0,20000,0,10,True
+305,28,El Wardian,8,Healthcare,Pharmacy,0,0,20000,0,20000,0,10,True
+306,28,El Wardian,9,Retail,Clothing & Fashion,0,0,20000,0,20000,0,10,True
+307,28,El Wardian,10,Retail,Supermarket & Grocery,0,0,20000,0,20000,0,10,True
+308,28,El Wardian,11,Tourism & Hospitality,Hotel,0,0,20000,0,20000,0,10,True
+309,29,Fleming,1,Financial Services,Bank & Exchange,0,0,13000,0,13000,0,8.95,True
+310,29,Fleming,2,Food & Beverage,Bakery,0,0,13000,0,13000,0,8.95,True
+311,29,Fleming,3,Food & Beverage,Cafe,0,0,13000,0,13000,0,8.95,True
+312,29,Fleming,4,Food & Beverage,Ice Cream & Sweets,0,0,13000,0,13000,0,8.95,True
+313,29,Fleming,5,Food & Beverage,Restaurant,0,0,13000,0,13000,0,8.95,True
+314,29,Fleming,6,Health & Fitness,Fitness Center,0,0,13000,0,13000,0,8.95,True
+315,29,Fleming,7,Healthcare,Hospital & Clinic,0,0,13000,0,13000,0,8.95,True
+316,29,Fleming,8,Healthcare,Pharmacy,0,0,13000,0,13000,0,8.95,True
+317,29,Fleming,9,Retail,Clothing & Fashion,0,0,13000,0,13000,0,8.95,True
+318,29,Fleming,10,Retail,Supermarket & Grocery,0,0,13000,0,13000,0,8.95,True
+319,29,Fleming,11,Tourism & Hospitality,Hotel,0,0,13000,0,13000,0,8.95,True
+320,30,Gleem,1,Financial Services,Bank & Exchange,0,0,12000,0,12000,0,8.8,True
+321,30,Gleem,2,Food & Beverage,Bakery,0,0,12000,0,12000,0,8.8,True
+322,30,Gleem,3,Food & Beverage,Cafe,0,0,12000,0,12000,0,8.8,True
+323,30,Gleem,4,Food & Beverage,Ice Cream & Sweets,0,0,12000,0,12000,0,8.8,True
+324,30,Gleem,5,Food & Beverage,Restaurant,0,0,12000,0,12000,0,8.8,True
+325,30,Gleem,6,Health & Fitness,Fitness Center,0,0,12000,0,12000,0,8.8,True
+326,30,Gleem,7,Healthcare,Hospital & Clinic,0,0,12000,0,12000,0,8.8,True
+327,30,Gleem,8,Healthcare,Pharmacy,0,0,12000,0,12000,0,8.8,True
+328,30,Gleem,9,Retail,Clothing & Fashion,0,0,12000,0,12000,0,8.8,True
+329,30,Gleem,10,Retail,Supermarket & Grocery,0,0,12000,0,12000,0,8.8,True
+330,30,Gleem,11,Tourism & Hospitality,Hotel,0,0,12000,0,12000,0,8.8,True
+331,31,Kafr Abdu,1,Financial Services,Bank & Exchange,0,0,18000,0,18000,0,9.7,True
+332,31,Kafr Abdu,2,Food & Beverage,Bakery,0,0,18000,0,18000,0,9.7,True
+333,31,Kafr Abdu,3,Food & Beverage,Cafe,0,0,18000,0,18000,0,9.7,True
+334,31,Kafr Abdu,4,Food & Beverage,Ice Cream & Sweets,0,0,18000,0,18000,0,9.7,True
+335,31,Kafr Abdu,5,Food & Beverage,Restaurant,0,0,18000,0,18000,0,9.7,True
+336,31,Kafr Abdu,6,Health & Fitness,Fitness Center,0,0,18000,0,18000,0,9.7,True
+337,31,Kafr Abdu,7,Healthcare,Hospital & Clinic,0,0,18000,0,18000,0,9.7,True
+338,31,Kafr Abdu,8,Healthcare,Pharmacy,0,0,18000,0,18000,0,9.7,True
+339,31,Kafr Abdu,9,Retail,Clothing & Fashion,0,0,18000,0,18000,0,9.7,True
+340,31,Kafr Abdu,10,Retail,Supermarket & Grocery,0,0,18000,0,18000,0,9.7,True
+341,31,Kafr Abdu,11,Tourism & Hospitality,Hotel,0,0,18000,0,18000,0,9.7,True
+342,32,King Mariout,1,Financial Services,Bank & Exchange,0,0,3000,0,3000,0,5.85,False
+343,32,King Mariout,2,Food & Beverage,Bakery,0,0,3000,0,3000,0,5.85,False
+344,32,King Mariout,3,Food & Beverage,Cafe,0,0,3000,0,3000,0,5.85,False
+345,32,King Mariout,4,Food & Beverage,Ice Cream & Sweets,0,0,3000,0,3000,0,5.85,False
+346,32,King Mariout,5,Food & Beverage,Restaurant,0,0,3000,0,3000,0,5.85,False
+347,32,King Mariout,6,Health & Fitness,Fitness Center,0,0,3000,0,3000,0,5.85,False
+348,32,King Mariout,7,Healthcare,Hospital & Clinic,0,0,3000,0,3000,0,5.85,False
+349,32,King Mariout,8,Healthcare,Pharmacy,0,0,3000,0,3000,0,5.85,False
+350,32,King Mariout,9,Retail,Clothing & Fashion,0,0,3000,0,3000,0,5.85,False
+351,32,King Mariout,10,Retail,Supermarket & Grocery,0,0,3000,0,3000,0,5.85,False
+352,32,King Mariout,11,Tourism & Hospitality,Hotel,0,0,3000,0,3000,0,5.85,False
+353,33,Laurent,1,Financial Services,Bank & Exchange,0,0,12500,0,12500,0,8.88,True
+354,33,Laurent,2,Food & Beverage,Bakery,0,0,12500,0,12500,0,8.88,True
+355,33,Laurent,3,Food & Beverage,Cafe,0,0,12500,0,12500,0,8.88,True
+356,33,Laurent,4,Food & Beverage,Ice Cream & Sweets,0,0,12500,0,12500,0,8.88,True
+357,33,Laurent,5,Food & Beverage,Restaurant,0,0,12500,0,12500,0,8.88,True
+358,33,Laurent,6,Health & Fitness,Fitness Center,0,0,12500,0,12500,0,8.88,True
+359,33,Laurent,7,Healthcare,Hospital & Clinic,0,0,12500,0,12500,0,8.88,True
+360,33,Laurent,8,Healthcare,Pharmacy,0,0,12500,0,12500,0,8.88,True
+361,33,Laurent,9,Retail,Clothing & Fashion,0,0,12500,0,12500,0,8.88,True
+362,33,Laurent,10,Retail,Supermarket & Grocery,0,0,12500,0,12500,0,8.88,True
+363,33,Laurent,11,Tourism & Hospitality,Hotel,0,0,12500,0,12500,0,8.88,True
+364,34,Louran,1,Financial Services,Bank & Exchange,0,0,14000,0,14000,0,9.1,True
+365,34,Louran,2,Food & Beverage,Bakery,0,0,14000,0,14000,0,9.1,True
+366,34,Louran,3,Food & Beverage,Cafe,0,0,14000,0,14000,0,9.1,True
+367,34,Louran,4,Food & Beverage,Ice Cream & Sweets,0,0,14000,0,14000,0,9.1,True
+368,34,Louran,5,Food & Beverage,Restaurant,0,0,14000,0,14000,0,9.1,True
+369,34,Louran,6,Health & Fitness,Fitness Center,0,0,14000,0,14000,0,9.1,True
+370,34,Louran,7,Healthcare,Hospital & Clinic,0,0,14000,0,14000,0,9.1,True
+371,34,Louran,8,Healthcare,Pharmacy,0,0,14000,0,14000,0,9.1,True
+372,34,Louran,9,Retail,Clothing & Fashion,0,0,14000,0,14000,0,9.1,True
+373,34,Louran,10,Retail,Supermarket & Grocery,0,0,14000,0,14000,0,9.1,True
+374,34,Louran,11,Tourism & Hospitality,Hotel,0,0,14000,0,14000,0,9.1,True
+375,35,Mahatet El Raml,1,Financial Services,Bank & Exchange,0,0,22000,0,22000,0,10,True
+376,35,Mahatet El Raml,2,Food & Beverage,Bakery,0,0,22000,0,22000,0,10,True
+377,35,Mahatet El Raml,3,Food & Beverage,Cafe,0,0,22000,0,22000,0,10,True
+378,35,Mahatet El Raml,4,Food & Beverage,Ice Cream & Sweets,0,0,22000,0,22000,0,10,True
+379,35,Mahatet El Raml,5,Food & Beverage,Restaurant,0,0,22000,0,22000,0,10,True
+380,35,Mahatet El Raml,6,Health & Fitness,Fitness Center,0,0,22000,0,22000,0,10,True
+381,35,Mahatet El Raml,7,Healthcare,Hospital & Clinic,0,0,22000,0,22000,0,10,True
+382,35,Mahatet El Raml,8,Healthcare,Pharmacy,0,0,22000,0,22000,0,10,True
+383,35,Mahatet El Raml,9,Retail,Clothing & Fashion,0,0,22000,0,22000,0,10,True
+384,35,Mahatet El Raml,10,Retail,Supermarket & Grocery,0,0,22000,0,22000,0,10,True
+385,35,Mahatet El Raml,11,Tourism & Hospitality,Hotel,0,0,22000,0,22000,0,10,True
+386,36,Mex,1,Financial Services,Bank & Exchange,0,0,8500,0,8500,0,8.28,True
+387,36,Mex,2,Food & Beverage,Bakery,0,0,8500,0,8500,0,8.28,True
+388,36,Mex,3,Food & Beverage,Cafe,0,0,8500,0,8500,0,8.28,True
+389,36,Mex,4,Food & Beverage,Ice Cream & Sweets,0,0,8500,0,8500,0,8.28,True
+390,36,Mex,5,Food & Beverage,Restaurant,0,0,8500,0,8500,0,8.28,True
+391,36,Mex,6,Health & Fitness,Fitness Center,0,0,8500,0,8500,0,8.28,True
+392,36,Mex,7,Healthcare,Hospital & Clinic,0,0,8500,0,8500,0,8.28,True
+393,36,Mex,8,Healthcare,Pharmacy,0,0,8500,0,8500,0,8.28,True
+394,36,Mex,9,Retail,Clothing & Fashion,0,0,8500,0,8500,0,8.28,True
+395,36,Mex,10,Retail,Supermarket & Grocery,0,0,8500,0,8500,0,8.28,True
+396,36,Mex,11,Tourism & Hospitality,Hotel,0,0,8500,0,8500,0,8.28,True
+397,37,Miami,1,Financial Services,Bank & Exchange,0,0,10000,0,10000,0,8.5,True
+398,37,Miami,2,Food & Beverage,Bakery,0,0,10000,0,10000,0,8.5,True
+399,37,Miami,3,Food & Beverage,Cafe,0,0,10000,0,10000,0,8.5,True
+400,37,Miami,4,Food & Beverage,Ice Cream & Sweets,0,0,10000,0,10000,0,8.5,True
+401,37,Miami,5,Food & Beverage,Restaurant,0,0,10000,0,10000,0,8.5,True
+402,37,Miami,6,Health & Fitness,Fitness Center,0,0,10000,0,10000,0,8.5,True
+403,37,Miami,7,Healthcare,Hospital & Clinic,0,0,10000,0,10000,0,8.5,True
+404,37,Miami,8,Healthcare,Pharmacy,0,0,10000,0,10000,0,8.5,True
+405,37,Miami,9,Retail,Clothing & Fashion,0,0,10000,0,10000,0,8.5,True
+406,37,Miami,10,Retail,Supermarket & Grocery,0,0,10000,0,10000,0,8.5,True
+407,37,Miami,11,Tourism & Hospitality,Hotel,0,0,10000,0,10000,0,8.5,True
+408,38,Moharram Bek,1,Financial Services,Bank & Exchange,0,0,17000,0,17000,0,9.55,True
+409,38,Moharram Bek,2,Food & Beverage,Bakery,0,0,17000,0,17000,0,9.55,True
+410,38,Moharram Bek,3,Food & Beverage,Cafe,0,0,17000,0,17000,0,9.55,True
+411,38,Moharram Bek,4,Food & Beverage,Ice Cream & Sweets,0,0,17000,0,17000,0,9.55,True
+412,38,Moharram Bek,5,Food & Beverage,Restaurant,0,0,17000,0,17000,0,9.55,True
+413,38,Moharram Bek,6,Health & Fitness,Fitness Center,0,0,17000,0,17000,0,9.55,True
+414,38,Moharram Bek,7,Healthcare,Hospital & Clinic,0,0,17000,0,17000,0,9.55,True
+415,38,Moharram Bek,8,Healthcare,Pharmacy,0,0,17000,0,17000,0,9.55,True
+416,38,Moharram Bek,9,Retail,Clothing & Fashion,0,0,17000,0,17000,0,9.55,True
+417,38,Moharram Bek,10,Retail,Supermarket & Grocery,0,0,17000,0,17000,0,9.55,True
+418,38,Moharram Bek,11,Tourism & Hospitality,Hotel,0,0,17000,0,17000,0,9.55,True
+419,39,New Borg El Arab,1,Financial Services,Bank & Exchange,0,0,3500,0,3500,0,6.32,True
+420,39,New Borg El Arab,2,Food & Beverage,Bakery,0,0,3500,0,3500,0,6.32,True
+421,39,New Borg El Arab,3,Food & Beverage,Cafe,0,0,3500,0,3500,0,6.32,True
+422,39,New Borg El Arab,4,Food & Beverage,Ice Cream & Sweets,0,0,3500,0,3500,0,6.32,True
+423,39,New Borg El Arab,5,Food & Beverage,Restaurant,0,0,3500,0,3500,0,6.32,True
+424,39,New Borg El Arab,6,Health & Fitness,Fitness Center,0,0,3500,0,3500,0,6.32,True
+425,39,New Borg El Arab,7,Healthcare,Hospital & Clinic,0,0,3500,0,3500,0,6.32,True
+426,39,New Borg El Arab,8,Healthcare,Pharmacy,0,0,3500,0,3500,0,6.32,True
+427,39,New Borg El Arab,9,Retail,Clothing & Fashion,0,0,3500,0,3500,0,6.32,True
+428,39,New Borg El Arab,10,Retail,Supermarket & Grocery,0,0,3500,0,3500,0,6.32,True
+429,39,New Borg El Arab,11,Tourism & Hospitality,Hotel,0,0,3500,0,3500,0,6.32,True
+430,40,Roshdy,1,Financial Services,Bank & Exchange,0,0,12000,0,12000,0,8.8,True
+431,40,Roshdy,2,Food & Beverage,Bakery,0,0,12000,0,12000,0,8.8,True
+432,40,Roshdy,3,Food & Beverage,Cafe,0,0,12000,0,12000,0,8.8,True
+433,40,Roshdy,4,Food & Beverage,Ice Cream & Sweets,0,0,12000,0,12000,0,8.8,True
+434,40,Roshdy,5,Food & Beverage,Restaurant,0,0,12000,0,12000,0,8.8,True
+435,40,Roshdy,6,Health & Fitness,Fitness Center,0,0,12000,0,12000,0,8.8,True
+436,40,Roshdy,7,Healthcare,Hospital & Clinic,0,0,12000,0,12000,0,8.8,True
+437,40,Roshdy,8,Healthcare,Pharmacy,0,0,12000,0,12000,0,8.8,True
+438,40,Roshdy,9,Retail,Clothing & Fashion,0,0,12000,0,12000,0,8.8,True
+439,40,Roshdy,10,Retail,Supermarket & Grocery,0,0,12000,0,12000,0,8.8,True
+440,40,Roshdy,11,Tourism & Hospitality,Hotel,0,0,12000,0,12000,0,8.8,True
+441,41,Saba Pasha,1,Financial Services,Bank & Exchange,0,0,13500,0,13500,0,9.03,True
+442,41,Saba Pasha,2,Food & Beverage,Bakery,0,0,13500,0,13500,0,9.03,True
+443,41,Saba Pasha,3,Food & Beverage,Cafe,0,0,13500,0,13500,0,9.03,True
+444,41,Saba Pasha,4,Food & Beverage,Ice Cream & Sweets,0,0,13500,0,13500,0,9.03,True
+445,41,Saba Pasha,5,Food & Beverage,Restaurant,0,0,13500,0,13500,0,9.03,True
+446,41,Saba Pasha,6,Health & Fitness,Fitness Center,0,0,13500,0,13500,0,9.03,True
+447,41,Saba Pasha,7,Healthcare,Hospital & Clinic,0,0,13500,0,13500,0,9.03,True
+448,41,Saba Pasha,8,Healthcare,Pharmacy,0,0,13500,0,13500,0,9.03,True
+449,41,Saba Pasha,9,Retail,Clothing & Fashion,0,0,13500,0,13500,0,9.03,True
+450,41,Saba Pasha,10,Retail,Supermarket & Grocery,0,0,13500,0,13500,0,9.03,True
+451,41,Saba Pasha,11,Tourism & Hospitality,Hotel,0,0,13500,0,13500,0,9.03,True
+452,42,San Stefano,1,Financial Services,Bank & Exchange,0,0,9500,0,9500,0,8.43,True
+453,42,San Stefano,2,Food & Beverage,Bakery,0,0,9500,0,9500,0,8.43,True
+454,42,San Stefano,3,Food & Beverage,Cafe,0,0,9500,0,9500,0,8.43,True
+455,42,San Stefano,4,Food & Beverage,Ice Cream & Sweets,0,0,9500,0,9500,0,8.43,True
+456,42,San Stefano,5,Food & Beverage,Restaurant,0,0,9500,0,9500,0,8.43,True
+457,42,San Stefano,6,Health & Fitness,Fitness Center,0,0,9500,0,9500,0,8.43,True
+458,42,San Stefano,7,Healthcare,Hospital & Clinic,0,0,9500,0,9500,0,8.43,True
+459,42,San Stefano,8,Healthcare,Pharmacy,0,0,9500,0,9500,0,8.43,True
+460,42,San Stefano,9,Retail,Clothing & Fashion,0,0,9500,0,9500,0,8.43,True
+461,42,San Stefano,10,Retail,Supermarket & Grocery,0,0,9500,0,9500,0,8.43,True
+462,42,San Stefano,11,Tourism & Hospitality,Hotel,0,0,9500,0,9500,0,8.43,True
+463,43,Sidi Bishr,1,Financial Services,Bank & Exchange,0,0,11000,0,11000,0,8.65,True
+464,43,Sidi Bishr,2,Food & Beverage,Bakery,0,0,11000,0,11000,0,8.65,True
+465,43,Sidi Bishr,3,Food & Beverage,Cafe,0,0,11000,0,11000,0,8.65,True
+466,43,Sidi Bishr,4,Food & Beverage,Ice Cream & Sweets,0,0,11000,0,11000,0,8.65,True
+467,43,Sidi Bishr,5,Food & Beverage,Restaurant,0,0,11000,0,11000,0,8.65,True
+468,43,Sidi Bishr,6,Health & Fitness,Fitness Center,0,0,11000,0,11000,0,8.65,True
+469,43,Sidi Bishr,7,Healthcare,Hospital & Clinic,0,0,11000,0,11000,0,8.65,True
+470,43,Sidi Bishr,8,Healthcare,Pharmacy,0,0,11000,0,11000,0,8.65,True
+471,43,Sidi Bishr,9,Retail,Clothing & Fashion,0,0,11000,0,11000,0,8.65,True
+472,43,Sidi Bishr,10,Retail,Supermarket & Grocery,0,0,11000,0,11000,0,8.65,True
+473,43,Sidi Bishr,11,Tourism & Hospitality,Hotel,0,0,11000,0,11000,0,8.65,True
+474,44,Sidi Gaber,1,Financial Services,Bank & Exchange,0,0,15000,0,15000,0,9.25,True
+475,44,Sidi Gaber,2,Food & Beverage,Bakery,0,0,15000,0,15000,0,9.25,True
+476,44,Sidi Gaber,3,Food & Beverage,Cafe,0,0,15000,0,15000,0,9.25,True
+477,44,Sidi Gaber,4,Food & Beverage,Ice Cream & Sweets,0,0,15000,0,15000,0,9.25,True
+478,44,Sidi Gaber,5,Food & Beverage,Restaurant,0,0,15000,0,15000,0,9.25,True
+479,44,Sidi Gaber,6,Health & Fitness,Fitness Center,0,0,15000,0,15000,0,9.25,True
+480,44,Sidi Gaber,7,Healthcare,Hospital & Clinic,0,0,15000,0,15000,0,9.25,True
+481,44,Sidi Gaber,8,Healthcare,Pharmacy,0,0,15000,0,15000,0,9.25,True
+482,44,Sidi Gaber,9,Retail,Clothing & Fashion,0,0,15000,0,15000,0,9.25,True
+483,44,Sidi Gaber,10,Retail,Supermarket & Grocery,0,0,15000,0,15000,0,9.25,True
+484,44,Sidi Gaber,11,Tourism & Hospitality,Hotel,0,0,15000,0,15000,0,9.25,True
+485,45,Sidi Salem,1,Financial Services,Bank & Exchange,0,0,8000,0,8000,0,8.2,True
+486,45,Sidi Salem,2,Food & Beverage,Bakery,0,0,8000,0,8000,0,8.2,True
+487,45,Sidi Salem,3,Food & Beverage,Cafe,0,0,8000,0,8000,0,8.2,True
+488,45,Sidi Salem,4,Food & Beverage,Ice Cream & Sweets,0,0,8000,0,8000,0,8.2,True
+489,45,Sidi Salem,5,Food & Beverage,Restaurant,0,0,8000,0,8000,0,8.2,True
+490,45,Sidi Salem,6,Health & Fitness,Fitness Center,0,0,8000,0,8000,0,8.2,True
+491,45,Sidi Salem,7,Healthcare,Hospital & Clinic,0,0,8000,0,8000,0,8.2,True
+492,45,Sidi Salem,8,Healthcare,Pharmacy,0,0,8000,0,8000,0,8.2,True
+493,45,Sidi Salem,9,Retail,Clothing & Fashion,0,0,8000,0,8000,0,8.2,True
+494,45,Sidi Salem,10,Retail,Supermarket & Grocery,0,0,8000,0,8000,0,8.2,True
+495,45,Sidi Salem,11,Tourism & Hospitality,Hotel,0,0,8000,0,8000,0,8.2,True
+496,46,Smouha,1,Financial Services,Bank & Exchange,0,0,13000,0,13000,0,8.95,True
+497,46,Smouha,2,Food & Beverage,Bakery,0,0,13000,0,13000,0,8.95,True
+498,46,Smouha,3,Food & Beverage,Cafe,0,0,13000,0,13000,0,8.95,True
+499,46,Smouha,4,Food & Beverage,Ice Cream & Sweets,0,0,13000,0,13000,0,8.95,True
+500,46,Smouha,5,Food & Beverage,Restaurant,0,0,13000,0,13000,0,8.95,True
+501,46,Smouha,6,Health & Fitness,Fitness Center,0,0,13000,0,13000,0,8.95,True
+502,46,Smouha,7,Healthcare,Hospital & Clinic,0,0,13000,0,13000,0,8.95,True
+503,46,Smouha,8,Healthcare,Pharmacy,0,0,13000,0,13000,0,8.95,True
+504,46,Smouha,9,Retail,Clothing & Fashion,0,0,13000,0,13000,0,8.95,True
+505,46,Smouha,10,Retail,Supermarket & Grocery,0,0,13000,0,13000,0,8.95,True
+506,46,Smouha,11,Tourism & Hospitality,Hotel,0,0,13000,0,13000,0,8.95,True
+507,47,Source,1,Financial Services,Bank & Exchange,105,208,,150,0,100,3,False
+508,47,Source,2,Food & Beverage,Bakery,15,1539,,150,0,100,3,False
+509,47,Source,3,Food & Beverage,Cafe,169,285,,150,0,100,3,False
+510,47,Source,4,Food & Beverage,Ice Cream & Sweets,22,1096,,150,0,100,3,False
+511,47,Source,5,Food & Beverage,Restaurant,205,305,,150,0,100,3,False
+512,47,Source,6,Health & Fitness,Fitness Center,18,2276,,150,0,100,3,False
+513,47,Source,7,Healthcare,Hospital & Clinic,213,517,,150,0,100,3,False
+514,47,Source,8,Healthcare,Pharmacy,168,128,,150,0,100,3,False
+515,47,Source,9,Retail,Clothing & Fashion,181,84,,150,0,100,3,False
+516,47,Source,10,Retail,Supermarket & Grocery,91,740,,150,0,100,3,False
+517,47,Source,11,Tourism & Hospitality,Hotel,83,1081,,150,0,100,3,False
+518,48,Sporting,1,Financial Services,Bank & Exchange,0,0,12000,0,12000,0,8.8,True
+519,48,Sporting,2,Food & Beverage,Bakery,0,0,12000,0,12000,0,8.8,True
+520,48,Sporting,3,Food & Beverage,Cafe,0,0,12000,0,12000,0,8.8,True
+521,48,Sporting,4,Food & Beverage,Ice Cream & Sweets,0,0,12000,0,12000,0,8.8,True
+522,48,Sporting,5,Food & Beverage,Restaurant,0,0,12000,0,12000,0,8.8,True
+523,48,Sporting,6,Health & Fitness,Fitness Center,0,0,12000,0,12000,0,8.8,True
+524,48,Sporting,7,Healthcare,Hospital & Clinic,0,0,12000,0,12000,0,8.8,True
+525,48,Sporting,8,Healthcare,Pharmacy,0,0,12000,0,12000,0,8.8,True
+526,48,Sporting,9,Retail,Clothing & Fashion,0,0,12000,0,12000,0,8.8,True
+527,48,Sporting,10,Retail,Supermarket & Grocery,0,0,12000,0,12000,0,8.8,True
+528,48,Sporting,11,Tourism & Hospitality,Hotel,0,0,12000,0,12000,0,8.8,True
+529,49,Stanley,1,Financial Services,Bank & Exchange,0,0,11500,0,11500,0,8.73,True
+530,49,Stanley,2,Food & Beverage,Bakery,0,0,11500,0,11500,0,8.73,True
+531,49,Stanley,3,Food & Beverage,Cafe,0,0,11500,0,11500,0,8.73,True
+532,49,Stanley,4,Food & Beverage,Ice Cream & Sweets,0,0,11500,0,11500,0,8.73,True
+533,49,Stanley,5,Food & Beverage,Restaurant,0,0,11500,0,11500,0,8.73,True
+534,49,Stanley,6,Health & Fitness,Fitness Center,0,0,11500,0,11500,0,8.73,True
+535,49,Stanley,7,Healthcare,Hospital & Clinic,0,0,11500,0,11500,0,8.73,True
+536,49,Stanley,8,Healthcare,Pharmacy,0,0,11500,0,11500,0,8.73,True
+537,49,Stanley,9,Retail,Clothing & Fashion,0,0,11500,0,11500,0,8.73,True
+538,49,Stanley,10,Retail,Supermarket & Grocery,0,0,11500,0,11500,0,8.73,True
+539,49,Stanley,11,Tourism & Hospitality,Hotel,0,0,11500,0,11500,0,8.73,True
+540,50,Victoria,1,Financial Services,Bank & Exchange,0,0,10000,0,10000,0,8.5,True
+541,50,Victoria,2,Food & Beverage,Bakery,0,0,10000,0,10000,0,8.5,True
+542,50,Victoria,3,Food & Beverage,Cafe,0,0,10000,0,10000,0,8.5,True
+543,50,Victoria,4,Food & Beverage,Ice Cream & Sweets,0,0,10000,0,10000,0,8.5,True
+544,50,Victoria,5,Food & Beverage,Restaurant,0,0,10000,0,10000,0,8.5,True
+545,50,Victoria,6,Health & Fitness,Fitness Center,0,0,10000,0,10000,0,8.5,True
+546,50,Victoria,7,Healthcare,Hospital & Clinic,0,0,10000,0,10000,0,8.5,True
+547,50,Victoria,8,Healthcare,Pharmacy,0,0,10000,0,10000,0,8.5,True
+548,50,Victoria,9,Retail,Clothing & Fashion,0,0,10000,0,10000,0,8.5,True
+549,50,Victoria,10,Retail,Supermarket & Grocery,0,0,10000,0,10000,0,8.5,True
+550,50,Victoria,11,Tourism & Hospitality,Hotel,0,0,10000,0,10000,0,8.5,True
+551,51,Zizinia,1,Financial Services,Bank & Exchange,0,0,10000,0,10000,0,8.5,True
+552,51,Zizinia,2,Food & Beverage,Bakery,0,0,10000,0,10000,0,8.5,True
+553,51,Zizinia,3,Food & Beverage,Cafe,0,0,10000,0,10000,0,8.5,True
+554,51,Zizinia,4,Food & Beverage,Ice Cream & Sweets,0,0,10000,0,10000,0,8.5,True
+555,51,Zizinia,5,Food & Beverage,Restaurant,0,0,10000,0,10000,0,8.5,True
+556,51,Zizinia,6,Health & Fitness,Fitness Center,0,0,10000,0,10000,0,8.5,True
+557,51,Zizinia,7,Healthcare,Hospital & Clinic,0,0,10000,0,10000,0,8.5,True
+558,51,Zizinia,8,Healthcare,Pharmacy,0,0,10000,0,10000,0,8.5,True
+559,51,Zizinia,9,Retail,Clothing & Fashion,0,0,10000,0,10000,0,8.5,True
+560,51,Zizinia,10,Retail,Supermarket & Grocery,0,0,10000,0,10000,0,8.5,True
+561,51,Zizinia,11,Tourism & Hospitality,Hotel,0,0,10000,0,10000,0,8.5,True
+562,1,Abis,12,Education,Education Center,0,0,5000,0,5000,0,6.63,True
+563,2,Abu Qir,12,Education,Education Center,0,0,4000,0,4000,0,5.8,False
+564,3,Abu Youssef,12,Education,Education Center,0,0,16000,0,16000,0,8,True
+565,4,Ard El Sobhiya,12,Education,Education Center,0,0,9000,0,9000,0,7.12,True
+566,5,Attarin,12,Education,Education Center,0,0,20000,0,20000,0,8.5,True
+567,6,Bab El Hadid,12,Education,Education Center,0,0,20000,0,20000,0,8.5,True
+568,7,Borg El Arab,12,Education,Education Center,0,0,2000,0,2000,0,4.15,False
+569,8,Boulkly,12,Education,Education Center,0,0,11000,0,11000,0,7.38,True
+570,9,Camp Shezar,12,Education,Education Center,0,0,13500,0,13500,0,7.69,True
+571,10,Chatby,12,Education,Education Center,0,0,13000,0,13000,0,7.63,True
+572,11,Cleopatra,12,Education,Education Center,0,0,14000,0,14000,0,7.75,True
+573,12,Cleopatra Hamamat,12,Education,Education Center,0,0,9000,0,9000,0,7.12,True
+574,13,El Agamy,12,Education,Education Center,0,0,6000,0,6000,0,6.75,True
+575,14,El Anfushi,12,Education,Education Center,0,0,16000,0,16000,0,8,True
+576,15,El Asafra,12,Education,Education Center,0,0,10500,0,10500,0,7.31,True
+577,16,El Azarita,12,Education,Education Center,0,0,20000,0,20000,0,8.5,True
+578,17,El Dekhela,12,Education,Education Center,0,0,7000,0,7000,0,6.88,True
+579,18,El Ekbal,12,Education,Education Center,0,0,11000,0,11000,0,7.38,True
+580,19,El Gomrok (Bahary),12,Education,Education Center,0,0,22000,0,22000,0,8.5,True
+581,20,El Hadra,12,Education,Education Center,0,0,22000,0,22000,0,8.5,True
+582,21,El Ibrahimiya,12,Education,Education Center,0,0,15000,0,15000,0,7.88,True
+583,22,El Maamoura,12,Education,Education Center,0,0,7500,0,7500,0,6.94,True
+584,23,El Mandara,12,Education,Education Center,0,0,9000,0,9000,0,7.12,True
+585,24,El Montazah,12,Education,Education Center,0,0,8000,0,8000,0,7,True
+586,25,El Nozha,12,Education,Education Center,0,0,8500,0,8500,0,7.06,True
+587,26,El Shatby,12,Education,Education Center,0,0,14000,0,14000,0,7.75,True
+588,27,El Shotbi,12,Education,Education Center,0,0,19000,0,19000,0,8.38,True
+589,28,El Wardian,12,Education,Education Center,0,0,20000,0,20000,0,8.5,True
+590,29,Fleming,12,Education,Education Center,0,0,13000,0,13000,0,7.63,True
+591,30,Gleem,12,Education,Education Center,0,0,12000,0,12000,0,7.5,True
+592,31,Kafr Abdu,12,Education,Education Center,0,0,18000,0,18000,0,8.25,True
+593,32,King Mariout,12,Education,Education Center,0,0,3000,0,3000,0,4.98,False
+594,33,Laurent,12,Education,Education Center,0,0,12500,0,12500,0,7.56,True
+595,34,Louran,12,Education,Education Center,0,0,14000,0,14000,0,7.75,True
+596,35,Mahatet El Raml,12,Education,Education Center,0,0,22000,0,22000,0,8.5,True
+597,36,Mex,12,Education,Education Center,0,0,8500,0,8500,0,7.06,True
+598,37,Miami,12,Education,Education Center,0,0,10000,0,10000,0,7.25,True
+599,38,Moharram Bek,12,Education,Education Center,0,0,17000,0,17000,0,8.13,True
+600,39,New Borg El Arab,12,Education,Education Center,0,0,3500,0,3500,0,5.39,False
+601,40,Roshdy,12,Education,Education Center,0,0,12000,0,12000,0,7.5,True
+602,41,Saba Pasha,12,Education,Education Center,0,0,13500,0,13500,0,7.69,True
+603,42,San Stefano,12,Education,Education Center,0,0,9500,0,9500,0,7.19,True
+604,43,Sidi Bishr,12,Education,Education Center,0,0,11000,0,11000,0,7.38,True
+605,44,Sidi Gaber,12,Education,Education Center,0,0,15000,0,15000,0,7.88,True
+606,45,Sidi Salem,12,Education,Education Center,0,0,8000,0,8000,0,7,True
+607,46,Smouha,12,Education,Education Center,0,0,13000,0,13000,0,7.63,True
+608,47,Source,12,Education,Education Center,31,1457,,150,0,100,4,False
+609,48,Sporting,12,Education,Education Center,0,0,12000,0,12000,0,7.5,True
+610,49,Stanley,12,Education,Education Center,0,0,11500,0,11500,0,7.44,True
+611,50,Victoria,12,Education,Education Center,0,0,10000,0,10000,0,7.25,True
+612,51,Zizinia,12,Education,Education Center,0,0,10000,0,10000,0,7.25,True

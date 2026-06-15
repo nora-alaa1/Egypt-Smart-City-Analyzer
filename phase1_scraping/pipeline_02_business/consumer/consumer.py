@@ -2,17 +2,17 @@
 Business Data Consumer
 ========================
 يستقبل من كل الـ topics:
-  osm-cafes-alexandria       → cafes.xlsx
-  osm-gyms-alexandria        → gyms.xlsx
+  osm-cafes-alexandria       → cafes.csv
+  osm-gyms-alexandria        → gyms.csv
   pharmacy-alexandria        → pharmacies.csv
-  restaurants-alexandria     → restaurants.xlsx
-  bakeries-alexandria        → bakeries.xlsx
-  hotels-alexandria          → hotels.xlsx
-  hospitals-alexandria       → hospitals.xlsx
-  banks-alexandria           → banks.xlsx
-  clothing-alexandria        → clothing.xlsx
-  supermarkets-alexandria    → supermarkets.xlsx
-  sweets-alexandria          → sweets.xlsx
+  restaurants-alexandria     → restaurants.csv
+  bakeries-alexandria        → bakeries.csv
+  hotels-alexandria          → hotels.csv
+  hospitals-alexandria       → hospitals.csv
+  banks-alexandria           → banks.csv
+  clothing-alexandria        → clothing.csv
+  supermarkets-alexandria    → supermarkets.csv
+  sweets-alexandria          → sweets.csv
 """
 
 import json
@@ -23,8 +23,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 from kafka import KafkaConsumer
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+# openpyxl removed — all output is now CSV
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [CONSUMER] %(message)s")
 log = logging.getLogger(__name__)
@@ -191,15 +190,15 @@ def write_csv(df: pd.DataFrame, path: str):
 
 
 def save_osm_topic(records: list, name: str, date_tag: str, drop_null_name: bool = False):
-    """حفظ أي topic من نوع OSM كـ Excel."""
+    """حفظ أي topic من نوع OSM كـ CSV."""
     if not records:
         return
     df = pd.DataFrame(records).drop_duplicates(subset=["latitude", "longitude"])
     if drop_null_name:
         df = df.dropna(subset=["name"])
     df = df.reset_index(drop=True)
-    path = os.path.join(OUTPUT_DIR, f"{name}_{date_tag}.xlsx")
-    write_excel(df[["name", "latitude", "longitude"]], path, name)
+    path = os.path.join(OUTPUT_DIR, f"{name}_{date_tag}.csv")
+    write_csv(df[["name", "latitude", "longitude"]], path)
 
 
 # ═══════════════════════════════════════════════════════════════════════════════

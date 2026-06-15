@@ -53,11 +53,11 @@ import os
 import pandas as pd
 
 TABLES = [
-    {"name": "Dim_Area",                  "file": "Dim_Area.xlsx"},
-    {"name": "Dim_Business_Type",         "file": "Dim_Business_Type.xlsx"},
-    {"name": "Dim_Property",              "file": "Dim_Property.xlsx"},
-    {"name": "Fact_Area_Business_Score",  "file": "Fact_Area_Business_Score.xlsx"},
-    {"name": "Fact_Property_Suitability", "file": "Fact_Property_Suitability.xlsx"},
+    {"name": "Dim_Area",                  "file": "Dim_Area.csv"},
+    {"name": "Dim_Business_Type",         "file": "Dim_Business_Type.csv"},
+    {"name": "Dim_Property",              "file": "Dim_Property.csv"},
+    {"name": "Fact_Area_Business_Score",  "file": "Fact_Area_Business_Score.csv"},
+    {"name": "Fact_Property_Suitability", "file": "Fact_Property_Suitability.csv"},
 ]
 
 success, failed = [], []

@@ -2,8 +2,8 @@
 Education Data Consumer
 ========================
 يستقبل من topic-ين:
-  schools-alexandria  → Schools_Alexandria.xlsx
-  centers-alexandria  → Centers_Alexandria.xlsx
+  schools-alexandria  → Schools_Alexandria.csv
+  centers-alexandria  → Centers_Alexandria.csv
 
 Output columns:
   name | type | edu_level | latitude | longitude | operator | capacity
@@ -16,8 +16,7 @@ from datetime import datetime
 
 import pandas as pd
 from kafka import KafkaConsumer
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+# openpyxl removed — all output is now CSV
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [EDU-CONSUMER] %(message)s")
 log = logging.getLogger(__name__)
@@ -164,8 +163,9 @@ def run():
                 .drop_duplicates(subset=["latitude", "longitude"])
                 .reset_index(drop=True)
             )
-            path = os.path.join(OUTPUT_DIR, f"{key}_alexandria_{date_tag}.xlsx")
-            write_excel(df[cols], path, sheet, title)
+            path = os.path.join(OUTPUT_DIR, f"{key}_alexandria_{date_tag}.csv")
+            df[cols].to_csv(path, index=False, encoding="utf-8-sig")
+            log.info(f"Saved {len(df)} rows → {path}")
 
     log.info(f"Done — schools:{len(buffers['schools'])} centers:{len(buffers['centers'])}")
 

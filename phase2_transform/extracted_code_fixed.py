@@ -64,22 +64,10 @@ JDBC_PROPS = {
 def read_pg(table):
     return spark.read.jdbc(url=JDBC_URL, table=f"bronze.{table}", properties=JDBC_PROPS)
 
-def to_excel(df, filename, sheet_name):
+def to_csv(df, filename):
     path = f"/data/phase2_transform/gold_output/{filename}"
     pdf  = df if isinstance(df, pd.DataFrame) else df.toPandas()
-    with pd.ExcelWriter(path, engine="openpyxl") as writer:
-        pdf.to_excel(writer, index=False, sheet_name=sheet_name)
-        ws = writer.sheets[sheet_name]
-        header_fill = PatternFill(start_color="1F4E79", end_color="1F4E79", fill_type="solid")
-        header_font = Font(color="FFFFFF", bold=True, size=11)
-        for cell in ws[1]:
-            cell.fill      = header_fill
-            cell.font      = header_font
-            cell.alignment = Alignment(horizontal="center", vertical="center")
-        for col in ws.columns:
-            max_len = max(len(str(c.value or "")) for c in col) + 4
-            ws.column_dimensions[get_column_letter(col[0].column)].width = min(max_len, 40)
-        ws.freeze_panes = ws["A2"]
+    pdf.to_csv(path, index=False, encoding="utf-8-sig")
     print(f"  ✅  {filename:<40} ({len(pdf):>6,} rows)")
 
 print("✅ Cell 1 ready!")
@@ -797,11 +785,11 @@ print(pdf_fact_prop.head())
 # ════════════════════════════════════════════════════════════════════
 print("📁 Exporting Gold Tables...\n")
 
-to_excel(df_dim_area,          "Dim_Area.xlsx",                 "Area")
-to_excel(df_dim_business_type, "Dim_Business_Type.xlsx",        "Business_Type")
-to_excel(df_dim_property,      "Dim_Property.xlsx",             "Property")
-to_excel(df_fact_area,         "Fact_Area_Business_Score.xlsx", "Area_Business_Score")
-to_excel(pdf_fact_prop,        "Fact_Property_Suitability.xlsx","Property_Suitability")
+to_csv(df_dim_area,          "Dim_Area.csv")
+to_csv(df_dim_business_type, "Dim_Business_Type.csv")
+to_csv(df_dim_property,      "Dim_Property.csv")
+to_csv(df_fact_area,         "Fact_Area_Business_Score.csv")
+to_csv(pdf_fact_prop,        "Fact_Property_Suitability.csv")
 
 print("\n" + "═"*55)
 print("🎉  All Gold Tables exported to /data/phase2_transform/gold_output/")
