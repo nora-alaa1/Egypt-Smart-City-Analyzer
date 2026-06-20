@@ -76,13 +76,20 @@
 
 ## 🛠️ Tools & Technologies
 
-| Phase | Tools |
-|---|---|
-| **Phase 1 — Ingestion** | Apache Kafka + Zookeeper (Confluent 7.6.0) · Kafka UI · PostgreSQL 16 · Docker · Python · kafka-python · psycopg2 · Requests · BeautifulSoup4 · lxml · Pandas · OpenPyXL · APScheduler |
-| **Phase 1 — Data Sources** | Aqarmap (scraping) · OpenStreetMap Overpass API · Egyfinder (scraping) · CAPMAS (local XLSX) · WorldPop API · Google Earth Engine VIIRS · OSMnx · SQLite |
-| **Phase 2 — Transform** | Apache Spark (PySpark) 3.5.3 · NumPy · Pandas · psycopg2 · OpenPyXL · JDBC (postgresql-42.7.3.jar) |
-| **Phase 3 — Data Warehouse** | SQL Server 2019/2022 · SQLAlchemy · pyodbc · Pandas · OpenPyXL |
-| **Airflow — Orchestration** | Apache Airflow 2.9 · Docker · PostgreSQL 15 (Airflow metadata) |
+**Phase 1 — Ingestion**
+> Kafka · Zookeeper · Kafka UI · PostgreSQL 16 · Docker · Python · kafka-python · psycopg2 · Requests · BeautifulSoup4 · Pandas · OpenPyXL · APScheduler
+
+**Phase 1 — Data Sources**
+> Aqarmap · OpenStreetMap (Overpass API) · Egyfinder · CAPMAS · WorldPop · Google Earth Engine · OSMnx · SQLite
+
+**Phase 2 — Transform**
+> Apache Spark (PySpark) 3.5.3 · NumPy · Pandas · psycopg2 · OpenPyXL
+
+**Phase 3 — Data Warehouse**
+> SQL Server · SQLAlchemy · pyodbc · Pandas · OpenPyXL
+
+**Airflow — Orchestration**
+> Apache Airflow 2.9 · Docker · PostgreSQL 15
 
 ---
 
