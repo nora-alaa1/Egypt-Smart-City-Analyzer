@@ -17,7 +17,7 @@
 │  PHASE 1 — Ingestion (Kafka + PostgreSQL)                       │
 │                                                                 │
 │  5 Kafka Pipelines (producers → consumers)                      │
-│  → output_all/  (Excel / CSV files)                             │
+│  → output_all/  (CSV files)                             │
 │  → Bronze Loader → PostgreSQL  schema: bronze                   │
 └──────────────────────────┬──────────────────────────────────────┘
                            │
@@ -27,7 +27,7 @@
 │                                                                 │
 │  PostgreSQL (bronze) → Apache Spark 3.5.3                       │
 │  → Haversine distances · Suitability scoring · Star schema      │
-│  → gold_output/  (Dim + Fact Excel files)                       │
+│  → gold_output/  (Dim + Fact CSV files)                       │
 └──────────────────────────┬──────────────────────────────────────┘
                            │
                            ▼
