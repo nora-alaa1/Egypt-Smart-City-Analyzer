@@ -7,7 +7,7 @@
 ## Architecture
 
 ```
-gold_output/  (Phase 2 Excel files)
+gold_output/  (Phase 2 CSV files)
         │
         ▼
 load_to_sqlserver.ipynb
@@ -141,11 +141,8 @@ engine = create_engine(
 
 ```
 SQL Server 2019/2022 (or Express)
-ODBC Driver 17 for SQL Server → https://aka.ms/downloadmsodbcsql
 
-sqlalchemy
-pyodbc
-openpyxl
+
 pandas
 ```
 
