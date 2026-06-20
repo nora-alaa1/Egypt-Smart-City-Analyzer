@@ -68,11 +68,11 @@
 |---|---|
 | **Orchestration** | Apache Airflow 2.9 |
 | **Processing** | Apache Spark (PySpark) 3.5.3 + NumPy / Pandas |
-| **Streaming** | Apache Kafka + Zookeeper (Confluent 7.6.0) + Kafka UI |
+| **Streaming** | Apache Kafka + Zookeeper + Kafka UI |
 | **Databases** | PostgreSQL 16 (Bronze) · SQL Server (Data Warehouse) |
 | **Containers** | Docker + Docker Compose |
-| **Python Stack** | Pandas, NumPy, OpenPyXL, SQLAlchemy, psycopg2, kafka-python |
-| **Scraping** | Requests, BeautifulSoup4, lxml |
+| **Python Stack** | Pandas, NumPy, kafka-python |
+| **Scraping** | Requests, BeautifulSoup4 |
 | **Data Sources** | Aqarmap · OpenStreetMap (Overpass) · Egyfinder · CAPMAS · WorldPop · Google Earth Engine |
 
 ---
