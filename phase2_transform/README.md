@@ -19,7 +19,7 @@ Apache Spark 3.5.3 (local[*] · 4g memory · AQE enabled)
         └── Fact_Property_Suitability   ← 2,652 rows
                 │
                 ▼
-        gold_output/  (.xlsx files)
+        gold_output/  (.csv files)
 ```
 
 ---
@@ -122,7 +122,6 @@ Cell 14 → Export all Gold tables to gold_output/
 ```
 Apache Spark  3.5.3
 Python        3.x
-Java          11 (OpenJDK)
 JDBC Driver   postgresql-42.7.3.jar
 
 pyspark==3.5.3
