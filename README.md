@@ -48,18 +48,6 @@
 
 ---
 
-## 📸 Screenshots
-
-**Kafka Topics (Phase 1)**
-
-![Kafka Topics](docs/screenshots/kafka_topics.png)
-
-**Star Schema (Data Warehouse)**
-
-![DWH Schema](docs/screenshots/schema.png)
-
----
-
 ## 📊 Data Warehouse — Final Row Counts
 
 | Table | Type | Rows |
@@ -76,20 +64,16 @@
 
 ## 🛠️ Tools & Technologies
 
-**Phase 1 — Ingestion**
-> Kafka · Zookeeper · Kafka UI · PostgreSQL 16 · Docker · Python · kafka-python · psycopg2 · Requests · BeautifulSoup4 · Pandas · OpenPyXL · APScheduler
-
-**Phase 1 — Data Sources**
-> Aqarmap · OpenStreetMap (Overpass API) · Egyfinder · CAPMAS · WorldPop · Google Earth Engine · OSMnx · SQLite
-
-**Phase 2 — Transform**
-> Apache Spark (PySpark) 3.5.3 · NumPy · Pandas · psycopg2 · OpenPyXL
-
-**Phase 3 — Data Warehouse**
-> SQL Server · SQLAlchemy · pyodbc · Pandas · OpenPyXL
-
-**Airflow — Orchestration**
-> Apache Airflow 2.9 · Docker · PostgreSQL 15
+| Layer | Tools |
+|---|---|
+| **Orchestration** | Apache Airflow 2.9 |
+| **Processing** | Apache Spark (PySpark) 3.5.3 + NumPy / Pandas |
+| **Streaming** | Apache Kafka + Zookeeper (Confluent 7.6.0) + Kafka UI |
+| **Databases** | PostgreSQL 16 (Bronze) · SQL Server (Data Warehouse) |
+| **Containers** | Docker + Docker Compose |
+| **Python Stack** | Pandas, NumPy, OpenPyXL, SQLAlchemy, psycopg2, kafka-python |
+| **Scraping** | Requests, BeautifulSoup4, lxml |
+| **Data Sources** | Aqarmap · OpenStreetMap (Overpass) · Egyfinder · CAPMAS · WorldPop · Google Earth Engine |
 
 ---
 
