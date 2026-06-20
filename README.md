@@ -62,38 +62,18 @@
 
 ---
 
-## 🛠️ Tools & Technologies
+## 🛠️ Tech Stack
 
-| Category | Tool | Version | Purpose |
-|---|---|---|---|
-| **Orchestration** | Apache Airflow | 2.9 | DAG scheduling, task dependencies, monitoring |
-| **Processing** | Apache Spark (PySpark) | 3.5.3 | Bronze → Gold ETL, vectorized Haversine, scoring |
-| **Messaging** | Apache Kafka | 7.6.0 (Confluent) | Real-time event streaming |
-| **Messaging** | Apache Zookeeper | 7.6.0 (Confluent) | Kafka coordination |
-| **Messaging** | Kafka UI | latest | Kafka visual monitoring |
-| **Storage (Bronze)** | PostgreSQL | 16-alpine | Raw data landing zone |
-| **Storage (DW)** | SQL Server | 2019/2022 | Star schema data warehouse |
-| **Containerization** | Docker | — | Container runtime |
-| **Containerization** | Docker Compose | v3.9 | Multi-service orchestration |
-| **Language** | Python | 3.x | All scripts and notebooks |
-| **Language** | SQL | — | DWH schema, constraints, indexes |
-| **Scheduling** | APScheduler | 3.10.4 | 6-month producer refresh |
-| **Data I/O** | Pandas | 2.2.2 | DataFrame processing |
-| **Data I/O** | OpenPyXL | 3.1.2 | Excel read/write |
-| **Geospatial** | NumPy | — | Vectorized Haversine formula |
-| **Geospatial** | OSMnx | — | Road network analysis |
-| **Web Scraping** | Requests | 2.31.0 | HTTP calls |
-| **Web Scraping** | BeautifulSoup4 | 4.12.3 | HTML parsing |
-| **Web Scraping** | lxml | 5.2.1 | XML/HTML parser |
-| **DB Connector** | kafka-python | 2.0.2 | Kafka producer/consumer |
-| **DB Connector** | psycopg2-binary | 2.9.9 | Python ↔ PostgreSQL |
-| **DB Connector** | SQLAlchemy + pyodbc | — | Python ↔ SQL Server |
-| **Data Sources** | Overpass API | — | OpenStreetMap query (free) |
-| **Data Sources** | WorldPop API | — | Population estimates (free) |
-| **Data Sources** | Google Earth Engine | — | VIIRS Nightlights CSV |
-| **Data Sources** | CAPMAS | — | Egyptian census data |
-| **Data Sources** | Aqarmap | — | Commercial rental listings |
-| **Data Sources** | Egyfinder | — | Pharmacy directory |
+| Layer | Tools |
+|---|---|
+| **Orchestration** | Apache Airflow 2.9 |
+| **Processing** | Apache Spark (PySpark) 3.5.3 · Pandas · NumPy |
+| **Messaging** | Apache Kafka 7.6.0 · Zookeeper · Kafka UI |
+| **Storage** | PostgreSQL 16 (Bronze) · SQL Server 2019/2022 (DWH) |
+| **Containerization** | Docker · Docker Compose v3.9 |
+| **Geospatial** | OSMnx · Haversine (NumPy) |
+| **Scraping** | Requests · BeautifulSoup4 · Overpass API |
+| **Data Sources** | Aqarmap · OpenStreetMap · Egyfinder · WorldPop · CAPMAS · GEE |
 
 ---
 
