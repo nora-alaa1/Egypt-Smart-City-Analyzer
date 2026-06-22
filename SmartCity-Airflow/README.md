@@ -59,7 +59,7 @@ start_infrastructure
 ### 1. Configure Environment
 
 ```bash
-cd smartcity-airflow
+cd SmartCity-Airflow
 cp .env.example .env
 ```
 
@@ -135,7 +135,7 @@ docker network ls | grep smartcity
 ```bash
 # Test notebook manually
 docker run --rm --network smartcity_default \
-  -v /path/to/phase2_transform:/home/jovyan/work \
+  -v /path/to/Phase2_Transform:/home/jovyan/work \
   jupyter/pyspark-notebook:spark-3.5.0 \
   jupyter nbconvert --to notebook --execute SmartCity_Phase1_Fixed.ipynb
 ```

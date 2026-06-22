@@ -28,24 +28,26 @@ logs/
 
 # Data artifacts (large files)
 *.jar
-phase2_transform/phase2_transform/
+Phase2_Transform/phase2_transform/
 
 # Airflow
-smartcity-airflow/logs/
-smartcity-airflow/plugins/
-smartcity-airflow/__pycache__/
+SmartCity-Airflow/logs/
+SmartCity-Airflow/plugins/
+SmartCity-Airflow/__pycache__/
 
 # Docker
 *.pid
 
 # Temp files
-phase3_dwh/fix_dwh.py
-phase3_dwh/renumber.py
-phase3_dwh/verify.py
-phase3_dwh/apply_and_verify.py
+Phase3_Dwh/fix_dwh.py
+Phase3_Dwh/renumber.py
+Phase3_Dwh/verify.py
+Phase3_Dwh/apply_and_verify.py
 read_schools.py
 read_schools2.py
 
 # ML Models
+*.pki
+*.pkl
 Phase_5_ML_Model/*.pkl
 copy_ml_files.py

@@ -6,13 +6,13 @@ from airflow.operators.bash import BashOperator
 from airflow.utils.trigger_rule import TriggerRule
 
 PROJECT = "/opt/airflow/smartcity"
-PHASE1  = f"{PROJECT}/phase1_scraping"
-PHASE2  = f"{PROJECT}/phase2_transform"
-PHASE3  = f"{PROJECT}/phase3_dwh"
+PHASE1  = f"{PROJECT}/Phase1_Scraping"
+PHASE2  = f"{PROJECT}/Phase2_Transform"
+PHASE3  = f"{PROJECT}/Phase3_Dwh"
 COMPOSE = f"{PHASE1}/docker-compose.master.yml"
 HOST_PROJECT = os.getenv("SMARTCITY_HOST_PATH", "C:/Users/mohamed/Downloads/SmartCityAnalyzer")
-HOST_PHASE2  = f"{HOST_PROJECT}/phase2_transform"
-HOST_PHASE3  = f"{HOST_PROJECT}/phase3_dwh"
+HOST_PHASE2  = f"{HOST_PROJECT}/Phase2_Transform"
+HOST_PHASE3  = f"{HOST_PROJECT}/Phase3_Dwh"
 # ✅ بعد
 DC = f"docker-compose -p smartcity -f {COMPOSE}"
 NETWORK = "smartcity_default"

@@ -12,7 +12,7 @@ DB_PORT     = int(os.getenv("SQLSERVER_PORT", "1433"))
 DB_NAME     = os.getenv("SQLSERVER_DB", "SmartCity")
 DB_USER     = os.getenv("SQLSERVER_USER", "sa")
 DB_PASSWORD = os.getenv("SQLSERVER_PASSWORD", "SmartCity@123")
-FILES_DIR = "/data/phase2_transform/gold_output"
+FILES_DIR = "/data/Phase2_Transform/gold_output"
 
 print(f"✅ Server: {DB_SERVER}:{DB_PORT} | DB: {DB_NAME} | User: {DB_USER}")
 

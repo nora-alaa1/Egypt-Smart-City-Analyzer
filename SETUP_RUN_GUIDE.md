@@ -54,7 +54,7 @@ bash setup.sh
 
 ### إعداد ملف البيئة بعد `setup.sh`
 
-بعد اكتمال تنفيذ الملف، يجب تعديل المتغيرات التالية في `smartcity-airflow/.env`:
+بعد اكتمال تنفيذ الملف، يجب تعديل المتغيرات التالية في `SmartCity-Airflow/.env`:
 
 ```bash
 # المسار المطلق لمجلد المشروع على الجهاز
@@ -194,7 +194,7 @@ lsof -i :9092
 
 **المشكلة: Phase 3 لا يستطيع الاتصال بـ SQL Server**
 
-في ملف `smartcity-airflow/.env`، قم بتعديل المتغير التالي:
+في ملف `SmartCity-Airflow/.env`، قم بتعديل المتغير التالي:
 
 ```bash
 SQLSERVER_HOST=host.docker.internal

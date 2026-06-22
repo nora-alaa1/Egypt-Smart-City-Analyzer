@@ -87,7 +87,7 @@ SmartCityAnalyzer-main/
 ├── run.sh                                 ← Start / Stop / Status
 ├── Dockerfile.airflow
 │
-├── phase1_scraping/                       ← Kafka + PostgreSQL (Bronze)
+├── Phase1_Scraping/                       ← Kafka + PostgreSQL (Bronze)
 │   ├── README.md
 │   ├── docker-compose.master.yml          ← All Phase 1 services
 │   ├── output_all/                        ← All pipeline outputs
@@ -98,7 +98,7 @@ SmartCityAnalyzer-main/
 │   ├── pipeline_05_traffic/               ← OSMnx + SQLite
 │   └── pipeline_bronze_postgres/          ← Auto-loader → PostgreSQL
 │
-├── phase2_transform/                      ← PySpark ETL
+├── Phase2_Transform/                      ← PySpark ETL
 │   ├── README.md
 │   ├── SmartCity_Phase1_Fixed.ipynb       ← Main Spark notebook
 │   ├── run_phase2.py                      ← CLI runner
@@ -109,7 +109,7 @@ SmartCityAnalyzer-main/
 │       ├── Fact_Area_Business_Score.xlsx
 │       └── Fact_Property_Suitability.xlsx
 │
-├── phase3_dwh/                            ← SQL Server Data Warehouse
+├── Phase3_Dwh/                            ← SQL Server Data Warehouse
 │   ├── README.md
 │   ├── load_to_sqlserver.ipynb
 │   ├── run_load.py
@@ -119,7 +119,7 @@ SmartCityAnalyzer-main/
 │       ├── 03_constraints.sql
 │       └── 04_indexes.sql
 │
-└── smartcity-airflow/                     ← Airflow Orchestrator
+└── SmartCity-Airflow/                     ← Airflow Orchestrator
     ├── README.md
     ├── docker-compose.yml
     ├── .env.example                       ← Copy to .env and edit
@@ -169,10 +169,10 @@ bash run.sh stop
 
 | Phase | README | Key Tech |
 |---|---|---|
-| Phase 1 — Ingestion | [phase1_scraping/README.md](phase1_scraping/README.md) | Kafka · PostgreSQL · Docker |
-| Phase 2 — Transform | [phase2_transform/README.md](phase2_transform/README.md) | PySpark · Haversine · Medallion |
-| Phase 3 — DWH | [phase3_dwh/README.md](phase3_dwh/README.md) | SQL Server · Star Schema |
-| Airflow — Orchestration | [smartcity-airflow/README.md](smartcity-airflow/README.md) | Airflow DAG · LocalExecutor |
+| Phase 1 — Ingestion | [Phase1_Scraping/README.md](Phase1_Scraping/README.md) | Kafka · PostgreSQL · Docker |
+| Phase 2 — Transform | [Phase2_Transform/README.md](Phase2_Transform/README.md) | PySpark · Haversine · Medallion |
+| Phase 3 — DWH | [Phase3_Dwh/README.md](Phase3_Dwh/README.md) | SQL Server · Star Schema |
+| Airflow — Orchestration | [SmartCity-Airflow/README.md](SmartCity-Airflow/README.md) | Airflow DAG · LocalExecutor |
 
 ---
 

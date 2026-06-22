@@ -90,11 +90,11 @@ data/
 
 ```bash
 # All pipelines (master)
-cd phase1_scraping
+cd Phase1_Scraping
 docker compose -f docker-compose.master.yml up --build
 
 # Single pipeline (standalone)
-cd phase1_scraping/pipeline_01_rental
+cd Phase1_Scraping/pipeline_01_rental
 docker compose up --build
 ```
 

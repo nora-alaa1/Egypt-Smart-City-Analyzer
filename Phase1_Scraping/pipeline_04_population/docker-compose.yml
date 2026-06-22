@@ -42,7 +42,7 @@ services:
       KAFKA_BROKER: kafka:9092
     volumes:
       - ./output:/app/output
-      - ../../../../data:/app/data
+      - ../../../../Data:/app/data
 
   population-consumer:
     build:

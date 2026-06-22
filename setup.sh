@@ -85,22 +85,22 @@ fi
 # ── 5. Create directories ────────────────────────────────────────
 step 5 "Creating required directories..."
 
-mkdir -p phase1_scraping/output_all
-ok "phase1_scraping/output_all/"
+mkdir -p Phase1_Scraping/output_all
+ok "Phase1_Scraping/output_all/"
 
-mkdir -p phase2_transform/gold_output
-ok "phase2_transform/gold_output/"
+mkdir -p Phase2_Transform/gold_output
+ok "Phase2_Transform/gold_output/"
 
-mkdir -p smartcity-airflow/logs
-mkdir -p smartcity-airflow/plugins
-mkdir -p smartcity-airflow/config
-ok "smartcity-airflow/logs|plugins|config/"
+mkdir -p SmartCity-Airflow/logs
+mkdir -p SmartCity-Airflow/plugins
+mkdir -p SmartCity-Airflow/config
+ok "SmartCity-Airflow/logs|plugins|config/"
 
 # ── 6. Airflow .env ──────────────────────────────────────────────
 step 6 "Setting up Airflow environment file..."
 
-ENV_FILE="smartcity-airflow/.env"
-ENV_EXAMPLE="smartcity-airflow/.env.example"
+ENV_FILE="SmartCity-Airflow/.env"
+ENV_EXAMPLE="SmartCity-Airflow/.env.example"
 
 if [ -f "$ENV_FILE" ]; then
     ok ".env already exists — skipping (edit it manually if needed)"
@@ -109,12 +109,12 @@ else
         cp "$ENV_EXAMPLE" "$ENV_FILE"
         ok ".env created from .env.example"
         echo ""
-        warn "IMPORTANT: Edit smartcity-airflow/.env before running Airflow:"
+        warn "IMPORTANT: Edit SmartCity-Airflow/.env before running Airflow:"
         echo "      → Set SMARTCITY_PROJECT_PATH to this folder's absolute path"
         echo "      → Set SMARTCITY_HOST_PATH to the same path"
         echo "      → Set SQLSERVER_PASSWORD to your SQL Server password"
     else
-        warn ".env.example not found — create smartcity-airflow/.env manually"
+        warn ".env.example not found — create SmartCity-Airflow/.env manually"
     fi
 fi
 
@@ -142,7 +142,7 @@ echo "================================================================"
 echo -e "  ${GREEN}Setup complete!${NC}"
 echo ""
 echo "  Next steps:"
-echo "    1. Edit smartcity-airflow/.env  (set your project path)"
+echo "    1. Edit SmartCity-Airflow/.env  (set your project path)"
 echo "    2. bash run.sh airflow           (start orchestrator)"
 echo "    OR"
 echo "    2. bash run.sh phase1            (run Phase 1 only)"

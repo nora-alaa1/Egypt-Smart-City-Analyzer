@@ -19,8 +19,8 @@
 # ================================================================
 
 # ── Paths ────────────────────────────────────────────────────────
-PHASE1_COMPOSE="phase1_scraping/docker-compose.master.yml"
-AIRFLOW_COMPOSE="smartcity-airflow/docker-compose.yml"
+PHASE1_COMPOSE="Phase1_Scraping/docker-compose.master.yml"
+AIRFLOW_COMPOSE="SmartCity-Airflow/docker-compose.yml"
 
 # ── Colors ───────────────────────────────────────────────────────
 GREEN='\033[0;32m'
@@ -45,8 +45,8 @@ check_compose_file() {
 }
 
 check_env_file() {
-    if [ ! -f "smartcity-airflow/.env" ]; then
-        fail "smartcity-airflow/.env not found"
+    if [ ! -f "SmartCity-Airflow/.env" ]; then
+        fail "SmartCity-Airflow/.env not found"
         warn "Run 'bash setup.sh' first, then edit the .env file."
         exit 1
     fi
@@ -117,8 +117,8 @@ phase1)
 phase2)
     header "⚡ Running Phase 2 — PySpark Transformation"
 
-    if [ ! -f "phase2_transform/run_phase2.py" ]; then
-        fail "phase2_transform/run_phase2.py not found"
+    if [ ! -f "Phase2_Transform/run_phase2.py" ]; then
+        fail "Phase2_Transform/run_phase2.py not found"
         exit 1
     fi
 
@@ -133,7 +133,7 @@ phase2)
         -e PG_DB=smartcity \
         -e PG_USER=smartcity \
         -e PG_PASSWORD=smartcity123 \
-        -v "$(pwd)/phase2_transform:/home/jovyan/work" \
+        -v "$(pwd)/Phase2_Transform:/home/jovyan/work" \
         -w /home/jovyan/work \
         jupyter/pyspark-notebook:spark-3.5.0 \
         jupyter nbconvert --to notebook --execute \
@@ -142,21 +142,21 @@ phase2)
             SmartCity_Phase1_Fixed.ipynb
 
     echo ""
-    ok "Phase 2 complete — Gold files saved to phase2_transform/gold_output/"
+    ok "Phase 2 complete — Gold files saved to Phase2_Transform/gold_output/"
     ;;
 
 # ── phase3 ───────────────────────────────────────────────────────
 phase3)
     header "🏗️ Running Phase 3 — Load to SQL Server"
 
-    if [ ! -f "phase3_dwh/run_load.py" ]; then
-        fail "phase3_dwh/run_load.py not found"
+    if [ ! -f "Phase3_Dwh/run_load.py" ]; then
+        fail "Phase3_Dwh/run_load.py not found"
         exit 1
     fi
 
     echo ""
     warn "Make sure SQL Server is running and accessible."
-    warn "Edit phase3_dwh/load_to_sqlserver.ipynb (Cell 2) with your connection settings."
+    warn "Edit Phase3_Dwh/load_to_sqlserver.ipynb (Cell 2) with your connection settings."
     echo ""
     read -p "  Continue? (y/n): " CONFIRM
     if [[ "$CONFIRM" != "y" && "$CONFIRM" != "Y" ]]; then
@@ -166,8 +166,8 @@ phase3)
 
     docker run --rm \
         --add-host=host.docker.internal:host-gateway \
-        -v "$(pwd)/phase3_dwh:/home/jovyan/work" \
-        -v "$(pwd)/phase2_transform/gold_output:/home/jovyan/gold_output" \
+        -v "$(pwd)/Phase3_Dwh:/home/jovyan/work" \
+        -v "$(pwd)/Phase2_Transform/gold_output:/home/jovyan/gold_output" \
         -w /home/jovyan/work \
         jupyter/datascience-notebook:latest \
         bash -c "pip install --quiet sqlalchemy pymssql openpyxl && \

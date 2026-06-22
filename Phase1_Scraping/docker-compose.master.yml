@@ -31,7 +31,7 @@ x-output-vol: &output-vol
   - ./output_all:/app/output
 
 x-data-vol: &data-vol
-  - ../../../../data:/app/data:ro
+  - ../../../../Data:/app/data:ro
 
 services:
 
@@ -229,7 +229,7 @@ services:
       <<: *kafka-env
     volumes:
       - ./output_all:/app/output
-      - ${SMARTCITY_HOST_PATH}/data:/app/data:ro
+      - ${SMARTCITY_HOST_PATH}/Data:/app/data:ro
 
   population-consumer:
     build:
@@ -262,7 +262,7 @@ services:
       <<: *kafka-env
     volumes:
       - ./output_all:/app/output
-      - ${SMARTCITY_HOST_PATH}/data:/app/data:ro
+      - ${SMARTCITY_HOST_PATH}/Data:/app/data:ro
 
   traffic-consumer:
     build:

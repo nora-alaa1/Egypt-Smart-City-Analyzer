@@ -1,12 +1,12 @@
 # ════════════════════════════════════════════════════════════════════
 # CELL 0 — Install Dependencies
 # ════════════════════════════════════════════════════════════════════
-#!apt-get install -y openjdk-11-jdk -qq
-#!pip uninstall dataproc-spark-connect -y -q
-#!pip uninstall pyspark -y -q
-#!pip install pyspark==3.5.3 -q
-#!pip install openpyxl -q
-#!wget -q https://jdbc.postgresql.org/download/postgresql-42.7.3.jar -O /tmp/postgresql-42.7.3.jar
+!apt-get install -y openjdk-11-jdk -qq
+!pip uninstall dataproc-spark-connect -y -q
+!pip uninstall pyspark -y -q
+!pip install pyspark==3.5.3 -q
+!pip install openpyxl -q
+!wget -q https://jdbc.postgresql.org/download/postgresql-42.7.3.jar -O /tmp/postgresql-42.7.3.jar
 print("✅ Done! — افعلي Runtime → Restart runtime")
 # ════════════════════════════════════════════════════════════════════
 # CELL 1 — Spark Session  ✦ الإصلاح الأول: config الـ Spark
@@ -33,7 +33,7 @@ import math, numpy as np, pandas as pd
 from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
 
-os.makedirs("/data/phase2_transform/gold_output", exist_ok=True)
+os.makedirs("/data/Phase2_Transform/gold_output", exist_ok=True)
 
 spark = (
     SparkSession.builder
@@ -65,7 +65,7 @@ def read_pg(table):
     return spark.read.jdbc(url=JDBC_URL, table=f"bronze.{table}", properties=JDBC_PROPS)
 
 def to_csv(df, filename):
-    path = f"/data/phase2_transform/gold_output/{filename}"
+    path = f"/data/Phase2_Transform/gold_output/{filename}"
     pdf  = df if isinstance(df, pd.DataFrame) else df.toPandas()
     pdf.to_csv(path, index=False, encoding="utf-8-sig")
     print(f"  ✅  {filename:<40} ({len(pdf):>6,} rows)")
@@ -76,13 +76,13 @@ print("✅ Cell 1 ready!")
 # ════════════════════════════════════════════════════════════════════
 import subprocess, time
 
-#!apt-get install -y postgresql postgresql-contrib -qq > /dev/null
-#!service postgresql start
+!apt-get install -y postgresql postgresql-contrib -qq > /dev/null
+!service postgresql start
 time.sleep(3)
 
-#!sudo -u postgres psql -c "CREATE USER smartcity WITH PASSWORD 'smartcity123';" 2>/dev/null || echo "User exists"
-#!sudo -u postgres psql -c "CREATE DATABASE smartcity OWNER smartcity;" 2>/dev/null || echo "DB exists"
-#!sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE smartcity TO smartcity;"
+!sudo -u postgres psql -c "CREATE USER smartcity WITH PASSWORD 'smartcity123';" 2>/dev/null || echo "User exists"
+!sudo -u postgres psql -c "CREATE DATABASE smartcity OWNER smartcity;" 2>/dev/null || echo "DB exists"
+!sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE smartcity TO smartcity;"
 
 result = subprocess.run(["sudo", "-u", "postgres", "psql", "-c", "\\l"],
                         capture_output=True, text=True)
@@ -133,7 +133,7 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA bronze GRANT ALL ON SEQUENCES TO smartcity;
 with open("/tmp/init.sql", "w") as f:
     f.write(INIT_SQL)
 
-#!sudo -u postgres psql -d smartcity -f /tmp/init.sql
+!sudo -u postgres psql -d smartcity -f /tmp/init.sql
 print("✅ Schema + tables + permissions ready!")
 import glob
 
