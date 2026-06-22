@@ -124,10 +124,12 @@ services:
     <<: *airflow-common
     container_name: airflow_scheduler
     restart: unless-stopped
-    command: >
-      bash -c "apt-get update -qq &&
-               apt-get install -y -qq docker.io &&
-               airflow scheduler"
+    command:
+      - /bin/bash
+      - -c
+      - |
+        apt-get update -qq && apt-get install -y -qq docker.io
+        exec airflow scheduler
     healthcheck:
       test: ["CMD-SHELL", "airflow jobs check --job-type SchedulerJob --hostname $(hostname)"]
       interval: 30s
