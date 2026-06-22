@@ -45,3 +45,7 @@ phase3_dwh/verify.py
 phase3_dwh/apply_and_verify.py
 read_schools.py
 read_schools2.py
+
+# ML Models
+Phase_5_ML_Model/*.pkl
+copy_ml_files.py

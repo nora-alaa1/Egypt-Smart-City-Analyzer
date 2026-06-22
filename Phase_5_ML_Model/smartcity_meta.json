@@ -1,0 +1,277 @@
+{
+  "areas": {
+    "1": {
+      "name": "Abis",
+      "population": 5000
+    },
+    "2": {
+      "name": "Abu Qir",
+      "population": 4000
+    },
+    "3": {
+      "name": "Abu Youssef",
+      "population": 16000
+    },
+    "4": {
+      "name": "Ard El Sobhiya",
+      "population": 9000
+    },
+    "5": {
+      "name": "Attarin",
+      "population": 20000
+    },
+    "6": {
+      "name": "Bab El Hadid",
+      "population": 20000
+    },
+    "7": {
+      "name": "Borg El Arab",
+      "population": 2000
+    },
+    "8": {
+      "name": "Boulkly",
+      "population": 11000
+    },
+    "9": {
+      "name": "Camp Shezar",
+      "population": 13500
+    },
+    "10": {
+      "name": "Chatby",
+      "population": 13000
+    },
+    "11": {
+      "name": "Cleopatra",
+      "population": 14000
+    },
+    "12": {
+      "name": "Cleopatra Hamamat",
+      "population": 9000
+    },
+    "13": {
+      "name": "El Agamy",
+      "population": 6000
+    },
+    "14": {
+      "name": "El Anfushi",
+      "population": 16000
+    },
+    "15": {
+      "name": "El Asafra",
+      "population": 10500
+    },
+    "16": {
+      "name": "El Azarita",
+      "population": 20000
+    },
+    "17": {
+      "name": "El Dekhela",
+      "population": 7000
+    },
+    "18": {
+      "name": "El Ekbal",
+      "population": 11000
+    },
+    "19": {
+      "name": "El Gomrok (Bahary)",
+      "population": 22000
+    },
+    "20": {
+      "name": "El Hadra",
+      "population": 22000
+    },
+    "21": {
+      "name": "El Ibrahimiya",
+      "population": 15000
+    },
+    "22": {
+      "name": "El Maamoura",
+      "population": 7500
+    },
+    "23": {
+      "name": "El Mandara",
+      "population": 9000
+    },
+    "24": {
+      "name": "El Montazah",
+      "population": 8000
+    },
+    "25": {
+      "name": "El Nozha",
+      "population": 8500
+    },
+    "26": {
+      "name": "El Shatby",
+      "population": 14000
+    },
+    "27": {
+      "name": "El Shotbi",
+      "population": 19000
+    },
+    "28": {
+      "name": "El Wardian",
+      "population": 20000
+    },
+    "29": {
+      "name": "Fleming",
+      "population": 13000
+    },
+    "30": {
+      "name": "Gleem",
+      "population": 12000
+    },
+    "31": {
+      "name": "Kafr Abdu",
+      "population": 18000
+    },
+    "32": {
+      "name": "King Mariout",
+      "population": 3000
+    },
+    "33": {
+      "name": "Laurent",
+      "population": 12500
+    },
+    "34": {
+      "name": "Louran",
+      "population": 14000
+    },
+    "35": {
+      "name": "Mahatet El Raml",
+      "population": 22000
+    },
+    "36": {
+      "name": "Mex",
+      "population": 8500
+    },
+    "37": {
+      "name": "Miami",
+      "population": 10000
+    },
+    "38": {
+      "name": "Moharram Bek",
+      "population": 17000
+    },
+    "39": {
+      "name": "New Borg El Arab",
+      "population": 3500
+    },
+    "40": {
+      "name": "Roshdy",
+      "population": 12000
+    },
+    "41": {
+      "name": "Saba Pasha",
+      "population": 13500
+    },
+    "42": {
+      "name": "San Stefano",
+      "population": 9500
+    },
+    "43": {
+      "name": "Sidi Bishr",
+      "population": 11000
+    },
+    "44": {
+      "name": "Sidi Gaber",
+      "population": 15000
+    },
+    "45": {
+      "name": "Sidi Salem",
+      "population": 8000
+    },
+    "46": {
+      "name": "Smouha",
+      "population": 13000
+    },
+    "47": {
+      "name": "Sporting",
+      "population": 12000
+    },
+    "48": {
+      "name": "Stanley",
+      "population": 11500
+    },
+    "49": {
+      "name": "Victoria",
+      "population": 10000
+    },
+    "50": {
+      "name": "Zizinia",
+      "population": 10000
+    }
+  },
+  "business_types": {
+    "1": {
+      "category": "Education",
+      "subcategory": "Education Center"
+    },
+    "2": {
+      "category": "Education",
+      "subcategory": "School"
+    },
+    "3": {
+      "category": "Financial Services",
+      "subcategory": "Bank & Exchange"
+    },
+    "4": {
+      "category": "Food & Beverage",
+      "subcategory": "Bakery"
+    },
+    "5": {
+      "category": "Food & Beverage",
+      "subcategory": "Cafe"
+    },
+    "6": {
+      "category": "Food & Beverage",
+      "subcategory": "Ice Cream & Sweets"
+    },
+    "7": {
+      "category": "Food & Beverage",
+      "subcategory": "Restaurant"
+    },
+    "8": {
+      "category": "Health & Fitness",
+      "subcategory": "Fitness Center"
+    },
+    "9": {
+      "category": "Healthcare",
+      "subcategory": "Hospital & Clinic"
+    },
+    "10": {
+      "category": "Healthcare",
+      "subcategory": "Pharmacy"
+    },
+    "11": {
+      "category": "Retail",
+      "subcategory": "Clothing & Fashion"
+    },
+    "12": {
+      "category": "Retail",
+      "subcategory": "Supermarket & Grocery"
+    },
+    "13": {
+      "category": "Tourism & Hospitality",
+      "subcategory": "Hotel"
+    }
+  },
+  "categories": [
+    "Education",
+    "Financial Services",
+    "Food & Beverage",
+    "Health & Fitness",
+    "Healthcare",
+    "Retail",
+    "Tourism & Hospitality"
+  ],
+  "tier_labels": [
+    "High",
+    "Low",
+    "Medium"
+  ],
+  "metrics": {
+    "classifier_cv_accuracy": 0.9925925925925926,
+    "regressor_cv_mae": 0.21819394120045596,
+    "regressor_cv_r2": 0.964341265067196
+  }
+}
