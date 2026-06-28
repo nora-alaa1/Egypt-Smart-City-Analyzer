@@ -138,21 +138,34 @@ class CSVData:
             self.areas[["area_id", "area_name", "population", "latitude", "longitude"]],
             on="area_id", how="left", suffixes=("", "_area")
         )
+        
+        # Prevent "cannot convert float NaN to integer"
+        merged.fillna({
+            "population": 0,
+            "latitude": 0,
+            "longitude": 0,
+            "competitor_count": 0,
+            "nearest_competitor_m": 0,
+            "demand_index": 0,
+            "market_saturation": 0,
+            "suitability_score": 5.0,
+            "recommended": False
+        }, inplace=True)
 
         results = []
         for _, row in merged.iterrows():
             results.append({
                 "area_id": int(row["area_id"]),
                 "name": row.get("area_name_y") or row.get("area_name_x", ""),
-                "population": int(row.get("population", 0)),
-                "latitude": float(row.get("latitude", 0)),
-                "longitude": float(row.get("longitude", 0)),
-                "competitor_count": int(row.get("competitor_count", 0)),
-                "nearest_competitor_m": float(row.get("nearest_competitor_m", 0)),
-                "demand_index": float(row.get("demand_index", 0)),
-                "market_saturation": float(row.get("market_saturation", 0)),
-                "suitability_score": float(row.get("suitability_score", 5.0)),
-                "recommended": bool(row.get("recommended", False)),
+                "population": int(row["population"]),
+                "latitude": float(row["latitude"]),
+                "longitude": float(row["longitude"]),
+                "competitor_count": int(row["competitor_count"]),
+                "nearest_competitor_m": float(row["nearest_competitor_m"]),
+                "demand_index": float(row["demand_index"]),
+                "market_saturation": float(row["market_saturation"]),
+                "suitability_score": float(row["suitability_score"]),
+                "recommended": bool(row["recommended"]),
             })
 
         return results
