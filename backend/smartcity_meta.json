@@ -1,0 +1,128 @@
+{
+  "areas": {
+    "1": {
+      "name": "Smouha",
+      "population": 45000
+    },
+    "2": {
+      "name": "Sidi Gaber",
+      "population": 38000
+    },
+    "3": {
+      "name": "Stanley",
+      "population": 25000
+    },
+    "4": {
+      "name": "Louran",
+      "population": 32000
+    },
+    "5": {
+      "name": "Cleopatra",
+      "population": 35000
+    },
+    "6": {
+      "name": "Sports City",
+      "population": 22000
+    },
+    "7": {
+      "name": "Rushdy",
+      "population": 29000
+    },
+    "8": {
+      "name": "Shatby",
+      "population": 18000
+    },
+    "9": {
+      "name": "Ibrahimia",
+      "population": 26000
+    },
+    "10": {
+      "name": "Moharam Bek",
+      "population": 31000
+    },
+    "11": {
+      "name": "Kafr Abdu",
+      "population": 27000
+    },
+    "12": {
+      "name": "El-Attarin",
+      "population": 15000
+    }
+  },
+  "business_types": {
+    "1": {
+      "category": "Food & Beverage",
+      "subcategory": "Cafe"
+    },
+    "2": {
+      "category": "Food & Beverage",
+      "subcategory": "Restaurant"
+    },
+    "3": {
+      "category": "Food & Beverage",
+      "subcategory": "Bakery"
+    },
+    "4": {
+      "category": "Retail",
+      "subcategory": "Clothing Store"
+    },
+    "5": {
+      "category": "Retail",
+      "subcategory": "Electronics"
+    },
+    "6": {
+      "category": "Retail",
+      "subcategory": "Supermarket"
+    },
+    "7": {
+      "category": "Healthcare",
+      "subcategory": "Pharmacy"
+    },
+    "8": {
+      "category": "Healthcare",
+      "subcategory": "Clinic"
+    },
+    "9": {
+      "category": "Education",
+      "subcategory": "Tutoring Center"
+    },
+    "10": {
+      "category": "Education",
+      "subcategory": "Language School"
+    },
+    "11": {
+      "category": "Fitness",
+      "subcategory": "Gym"
+    },
+    "12": {
+      "category": "Fitness",
+      "subcategory": "Yoga Studio"
+    },
+    "13": {
+      "category": "Entertainment",
+      "subcategory": "Game Zone"
+    },
+    "14": {
+      "category": "Entertainment",
+      "subcategory": "Cinema"
+    }
+  },
+  "categories": [
+    "Education",
+    "Entertainment",
+    "Fitness",
+    "Food & Beverage",
+    "Healthcare",
+    "Retail"
+  ],
+  "tier_labels": [
+    "High",
+    "Low",
+    "Medium"
+  ],
+  "metrics": {
+    "classifier_cv_accuracy": 0.8166666666666667,
+    "regressor_cv_mae": 0.4810988403442485,
+    "regressor_cv_r2": 0.3592113401203866
+  }
+}

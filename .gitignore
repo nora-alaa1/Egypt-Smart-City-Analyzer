@@ -7,6 +7,11 @@ __pycache__/
 dist/
 build/
 *.egg
+.venv/
+
+# Node / Next.js
+node_modules/
+.next/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -46,8 +51,13 @@ Phase3_Dwh/apply_and_verify.py
 read_schools.py
 read_schools2.py
 
-# ML Models
+# ML Models (exclude all except backend)
 *.pki
 *.pkl
+!backend/smartcity_model.pkl
 Phase_5_ML_Model/*.pkl
 copy_ml_files.py
+
+# Environment
+.env
+

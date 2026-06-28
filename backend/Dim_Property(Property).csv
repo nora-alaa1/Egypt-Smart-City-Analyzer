@@ -1,0 +1,102 @@
+prop_id,area_id,street_name,area_sqm,rent_monthly_egp,rent_per_sqm
+1,5,Alexandria / Abd El-Salam Aref St,650,220000,338.46
+2,5,Alexandria / Abd El-Salam Aref St,200,65000,325
+3,5,Alexandria / Abdel Salam Aref St.,300,120000,400
+4,26,Alexandria / Ademon Fremon St.,825,412500,500
+5,13,Alexandria / Al Agamy,100,12000,120
+6,13,Alexandria / Al Agamy,100,5500,55
+7,13,Alexandria / Al Agamy,50,2000,40
+8,20,Alexandria / Al Moaaskar Al Romani St.,56,25000,446.43
+9,20,Alexandria / Al Moaaskar Al Romani St.,185,150000,810.81
+10,16,Alexandria / El Azarita,100,50000,500
+11,43,Alexandria / El Gaish Road,115,25000,217.39
+12,43,Alexandria / El Gaish Road,70,45000,642.86
+13,43,Alexandria / El Gaish Road,85,13000,152.94
+14,43,Alexandria / El Gaish Road,125,120000,960
+15,43,Alexandria / El Gaish Road,160,80000,500
+16,43,Alexandria / El Geish Rd.,60,30000,500
+17,43,Alexandria / El Geish Rd.,470,350000,744.68
+18,23,Alexandria / El Mandara,70,28000,400
+19,23,Alexandria / El Mandara Qebli,180,18000,100
+20,43,Alexandria / El-Gaish Rd,560,325000,580.36
+21,43,Alexandria / Gamal Abd El Nasir St,90,10000,111.11
+22,43,Alexandria / Gamal Abd El Nasir St,50,10000,200
+23,43,Alexandria / Gamal Abd El Nasir St,180,35000,194.44
+24,43,Alexandria / Gamal Abd El Nasir St,50,7000,140
+25,43,Alexandria / Gamal Abd El Nasir St,100,13000,130
+26,43,Alexandria / Gamal Abd El Nasir St,55,15000,272.73
+27,43,Alexandria / Gamal Abd El Nasir St,80,9500,118.75
+28,43,Alexandria / Gamal Abd El Nasir St,240,100000,416.67
+29,43,Alexandria / Gamal Abd El Nasir St,50,7500,150
+30,43,Alexandria / Gamal Abd El Nasir St,55,10000,181.82
+31,43,Alexandria / Gamal Abd El Nasir St,160,15000,93.75
+32,43,Alexandria / Gamal Abd El Nasir St,60,9000,150
+33,43,Alexandria / Gamal Abd El Nasir St,100,12000,120
+34,43,Alexandria / Gamal Abd El Nasir St,300,25000,83.33
+35,43,Alexandria / Gamal Abd El Nasir St,100,25000,250
+36,43,Alexandria / Gamal Abd El Nasir St,110,25000,227.27
+37,43,Alexandria / Gamal Abd El Nasir St,600,300000,500
+38,43,Alexandria / Gamal Abd El Nasir St,120,13000,108.33
+39,43,Alexandria / Gamal Abd El Nasir St,135,15000,111.11
+40,43,Alexandria / Gamal Abd El Nasir St,65,6000,92.31
+41,43,Alexandria / Gamal Abd El Nasir St,130,14000,107.69
+42,43,Alexandria / Gamal Abd El Nasir St,60,10000,166.67
+43,43,Alexandria / Gamal Abd El Nasir St,50,8000,160
+44,43,Alexandria / Gamal Abdel Nasser St.,120,10000,83.33
+45,43,Alexandria / Gamal Abdel Nasser St.,120,15000,125
+46,43,Alexandria / Gamal Abdel Nasser St.,150,6000,40
+47,43,Alexandria / Gamal Abdel Nasser St.,60,5000,83.33
+48,43,Alexandria / Gamal Abdel Nasser St.,100,10000,100
+49,43,Alexandria / Gamal Abdel Nasser St.,150,17000,113.33
+50,43,Alexandria / Gamal Abdel Nasser St.,55,30000,545.45
+51,43,Alexandria / Gamal Abdel Nasser St.,240,100000,416.67
+52,43,Alexandria / Gamal Abdel Nasser St.,60,25000,416.67
+53,43,Alexandria / Gamal Abdel Nasser St.,200,39000,195
+54,43,Alexandria / Gamal Abdel Nasser St.,240,90000,375
+55,43,Alexandria / Gamal Abdel Nasser St.,80,12000,150
+56,43,Alexandria / Gamal Abdel Nasser St.,250,85000,340
+57,43,Alexandria / Gamal Abdel Nasser St.,60,12000,200
+58,43,Alexandria / Gamal Abdel Nasser St.,120,12000,100
+59,46,Alexandria / Khaled Ibn El Waleed St.,148,45000,304.05
+60,46,Alexandria / Khaled Ibn El Waleed St.,150,30000,200
+61,46,Alexandria / Khaled Ibn El Waleed St.,180,50000,277.78
+62,46,Alexandria / Khaled Ibn El Waleed St.,200,50000,250
+63,46,Alexandria / Khaled Ibn El Waleed St.,90,14000,155.56
+64,22,Alexandria / Kornesh El-Maamoura St,140,135000,964.29
+65,14,Alexandria / La Jetee St.,100,15000,150
+66,14,Alexandria / La Jetee St.,125,20000,160
+67,14,Alexandria / La Jetee St.,65,20000,307.69
+68,37,Alexandria / Miami,60,15000,250
+69,38,Alexandria / Mohammed Al Eqbal St.,80,20000,250
+70,38,Alexandria / Mohammed Al Eqbal St.,80,25000,312.5
+71,20,Alexandria / Mohammed Darwish El-Deeb St.,85,120000,1411.76
+72,31,Alexandria / Mohammed Fawzi Moaz St.,250,250000,1000
+73,40,Alexandria / Mostafa Fahmy St,700,95000,135.71
+74,20,Alexandria / New El Hadra,150,12000,80
+75,20,Alexandria / New El Hadra,150,15000,100
+76,5,Alexandria / Riad St,310,210000,677.42
+77,40,Alexandria / Roushdy Basha St.,60,25000,416.67
+78,16,Alexandria / Saad Zaghloul St.,100,100000,1000
+79,46,Alexandria / Salah Salem St.,183,45000,245.9
+80,46,Alexandria / Salah Salem St.,194,80000,412.37
+81,14,Alexandria / Sant Giyn St.,138,75000,543.48
+82,22,Alexandria / Shatee El Nakheel,450,35000,77.78
+83,43,Alexandria / Sidi Bishr,70,40000,571.43
+84,43,Alexandria / Sidi Bishr,100,13000,130
+85,43,Alexandria / Sidi Bishr,60,5000,83.33
+86,43,Alexandria / Sidi Bishr,60,4500,75
+87,43,Alexandria / Sidi Bishr,230,10000,43.48
+88,50,Alexandria / Victoria,60,25000,416.67
+89,50,Alexandria / Victoria,55,25000,454.55
+90,50,Alexandria / Victoria,60,26000,433.33
+91,50,Alexandria / Victoria,50,20000,400
+92,43,Alexandria / Gamal Abd El Nasir St,100,10000,100
+93,43,Alexandria / Gamal Abd El Nasir St,70,5000,71.43
+94,43,Alexandria / Gamal Abd El Nasir St,110,15000,136.36
+95,43,Alexandria / Gamal Abd El Nasir St,100,40000,400
+96,43,Alexandria / Gamal Abdel Nasser St.,83,12000,144.58
+97,43,Alexandria / Gamal Abdel Nasser St.,240,70000,291.67
+98,37,Alexandria / Miami,70,10000,142.86
+99,43,Alexandria / Sidi Bishr,70,8500,121.43
+100,50,Alexandria / Victoria,55,15000,272.73
+101,43,Alexandria / El-Gaish Rd,60,19000,316.67

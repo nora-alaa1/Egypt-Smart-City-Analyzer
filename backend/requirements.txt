@@ -1,0 +1,18 @@
+# Web framework
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+
+# ML / data
+scikit-learn>=1.5.0
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Validation
+pydantic>=2.5.0
+
+# Database
+sqlalchemy>=2.0.30
+psycopg2-binary>=2.9.9        # PostgreSQL driver
+
+# Environment
+python-dotenv>=1.0.1
