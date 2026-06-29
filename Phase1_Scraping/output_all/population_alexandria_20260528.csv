@@ -1,0 +1,58 @@
+Alexandria Population Data — SmartCityAnalyzer,,,,,,
+district,population,population_source,nightlight_intensity,year,latitude,longitude
+Abis,5000,estimate,,2026,31.15,29.85
+Abu Qir,4000,estimate,,2026,31.315,30.07
+Abu Youssef,16000,estimate,,2026,31.21,29.91
+Ard El Sobhiya,9000,estimate,,2026,31.17,29.875
+Attarin,20000,estimate,,2026,31.198,29.9
+Bab El Hadid,20000,estimate,,2026,31.195,29.9
+Borg El Arab,2000,estimate,,2026,30.91,29.53
+Boulkly,11000,estimate,,2026,31.225,29.965
+Camp Shezar,13500,estimate,,2026,31.207,29.92
+Chatby,13000,estimate,,2026,31.197,29.905
+Cleopatra,14000,estimate,,2026,31.235,29.98
+Cleopatra Hamamat,9000,estimate,,2026,31.255,30.035
+El Agamy,6000,estimate,,2026,31.055,29.77
+El Anfushi,16000,estimate,,2026,31.21,29.88
+El Asafra,10500,estimate,,2026,31.265,30.055
+El Azarita,20000,estimate,,2026,31.195,29.905
+El Dekhela,7000,estimate,,2026,31.155,29.85
+El Ekbal,11000,estimate,,2026,31.21,29.945
+El Gomrok (Bahary),22000,estimate,,2026,31.2,29.89
+El Hadra,22000,estimate,,2026,31.185,29.895
+El Ibrahimiya,15000,estimate,,2026,31.207,29.925
+El Maamoura,7500,estimate,,2026,31.29,30.03
+El Mandara,9000,estimate,,2026,31.275,30
+El Montazah,8000,estimate,,2026,31.285,30.01
+El Nozha,8500,estimate,,2026,31.265,30.05
+El Shatby,14000,estimate,,2026,31.198,29.905
+El Shotbi,19000,estimate,,2026,31.205,29.93
+El Wardian,20000,estimate,,2026,31.185,29.885
+Fleming,13000,estimate,,2026,31.225,29.965
+Gleem,12000,estimate,,2026,31.225,29.965
+Kafr Abdu,18000,estimate,,2026,31.215,29.93
+King Mariout,3000,estimate,,2026,31.02,29.65
+Laurent,12500,estimate,,2026,31.215,29.955
+Louran,14000,estimate,,2026,31.205,29.935
+Mahatet El Raml,22000,estimate,,2026,31.2,29.91
+Mex,8500,estimate,,2026,31.16,29.855
+Miami,10000,estimate,,2026,31.26,30.045
+Moharram Bek,17000,estimate,,2026,31.195,29.92
+New Borg El Arab,3500,estimate,,2026,30.895,29.525
+Roshdy,12000,estimate,,2026,31.225,29.96
+Saba Pasha,13500,estimate,,2026,31.22,29.955
+San Stefano,9500,estimate,,2026,31.235,29.98
+Sidi Bishr,11000,estimate,,2026,31.255,30.03
+Sidi Gaber,15000,estimate,,2026,31.22,29.95
+Sidi Salem,8000,estimate,,2026,31.27,30.05
+Smouha,13000,estimate,,2026,31.215,29.96
+Sporting,12000,estimate,,2026,31.22,29.955
+Stanley,11500,estimate,,2026,31.23,29.97
+Victoria,10000,estimate,,2026,31.25,30.02
+Zizinia,10000,estimate,,2026,31.235,29.975
+,,,,,,
+Total Districts,=COUNTA(A3:A52),,,,,
+Total Population,=SUM(B3:B52),,,,,
+Avg Nightlight,=AVERAGE(D3:D52),,,,,
+Scraped At,2026-05-28,,,,,
+Source,CAPMAS + Google Earth Engine VIIRS,,,,,
