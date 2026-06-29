@@ -200,7 +200,7 @@ export default function Charts({ analysisResult }: ChartsProps) {
           </ResponsiveContainer>
           <div className="flex flex-wrap justify-center gap-3 mt-2">
             {visitorsData.map((item, i) => (
-              <div key={`legend-${i}`} className="flex items-center gap-1.5 cursor-pointer"
+              <div key={item.name} className="flex items-center gap-1.5 cursor-pointer"
                 onMouseEnter={() => setActiveIndex(i)}
                 onMouseLeave={() => setActiveIndex(-1)}>
                 <div className="w-2.5 h-2.5 rounded-full"

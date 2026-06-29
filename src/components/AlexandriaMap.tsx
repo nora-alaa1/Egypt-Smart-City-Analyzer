@@ -70,13 +70,7 @@ export default function AlexandriaMap({ rankings }: MapProps) {
         shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
       });
 
-      // Prevent "Map container is already initialized" in React Strict Mode
-      const container = mapRef.current!;
-      if ((container as any)._leaflet_id) {
-        (container as any)._leaflet_id = null;
-      }
-
-      const map = L.map(container, {
+      const map = L.map(mapRef.current!, {
         center: [31.205, 29.915],
         zoom: 12,
         zoomControl: false,

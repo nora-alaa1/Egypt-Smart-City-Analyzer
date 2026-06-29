@@ -50,12 +50,7 @@ _le_tier = _bundle["le_tier"]
 _le_cat = _bundle["le_category"]
 _FEATURES: list[str] = _bundle["features"]
 _CATEGORIES: list[str] = _bundle["categories"]
-_METRICS = _bundle.get("metrics", {})
-
-FRONTEND_TO_CSV_MAP = {
-    "Fitness": "Health & Fitness",
-    "Entertainment": "Tourism & Hospitality",
-}
+_METRICS: dict = _bundle["metrics"]
 
 # ── Fallback synthetic data ──
 _FALLBACK_AREAS: dict[int, tuple[str, int]] = _bundle["areas"]
@@ -176,10 +171,7 @@ def _predict_single(area_sqm, rent_egp, category, area_id=None,
 
     rent_per_sqm = rent_egp / area_sqm if area_sqm > 0 else 500
     affordability = max(0.2, min(2.0, 1 - (rent_per_sqm / 450 - 1) * 0.5))
-    try:
-        cat_enc = _le_cat.transform([category])[0]
-    except ValueError:
-        cat_enc = 0
+    cat_enc = _le_cat.transform([category])[0]
     x = np.array([[area_sqm, rent_per_sqm, affordability,
                    comp_500m, comp_1km, population, cat_enc]])
 
@@ -281,28 +273,29 @@ def _estimate_profit(population: int, avg_rent: float, competitor_count: int,
 #  CSV-based pipeline (primary)
 # ══════════════════════════════════════════════════════════════
 
-def _run_csv_pipeline(category: str, rent_budget: float = 50000, area_sqm: float = 120, min_population: int = 0):
-    """
-    1) Get base stats from CSV (population, rent, competitors)
-    2) Run through ML model for final scores
-    3) Calculate profit/ROI
-    4) Return full AnalysisResult
-    """
-    csv_cat = FRONTEND_TO_CSV_MAP.get(category, category)
-    areas_metrics = csv_data.get_area_metrics_for_category(csv_cat)
+def _run_csv_pipeline(category: str, min_pop: int = 0,
+                       max_rent: Optional[float] = None,
+                       area_sqm_default: float = 120.0) -> list[dict]:
+    """Full analysis using real CSV data."""
+    csv_data = get_csv_data()
+    if not csv_data.loaded:
+        raise HTTPException(503, "CSV data not loaded")
+
+    # Get area metrics for this category from the pre-scored data
+    area_metrics = csv_data.get_area_metrics_for_category(category)
     results = []
 
-    for am in areas_metrics:
-        if min_population and am["population"] < min_population:
+    for am in area_metrics:
+        if min_pop and am["population"] < min_pop:
             continue
-        if rent_budget and am.get("avg_rent", 0) * area_sqm > rent_budget:
+        if max_rent and am.get("avg_rent", 0) > max_rent:
             continue
 
         # Use the pre-computed suitability score directly as a baseline
         base_score = am["suitability_score"]
 
         # Count competitors from suitability table
-        comp_count = csv_data.count_competitors(am["area_id"], csv_cat)
+        comp_count = csv_data.count_competitors(am["area_id"], category)
 
         traffic = 6.0
         demand = am.get("demand_index", 5000)
@@ -319,17 +312,14 @@ def _run_csv_pipeline(category: str, rent_budget: float = 50000, area_sqm: float
 
         # Enhance with AI model prediction
         rent_est = am.get("avg_rent", 300) or 300
-        rent_egp = rent_est * area_sqm
+        rent_egp = rent_est * area_sqm_default
         rent_per_sqm = rent_est
         affordability = max(0.2, min(2.0, 1 - (rent_per_sqm / 450 - 1) * 0.5))
-        try:
-            cat_enc = _le_cat.transform([csv_cat])[0]
-        except ValueError:
-            cat_enc = 0
+        cat_enc = _le_cat.transform([category])[0]
         comp_500m = int(round(comp_count * 0.35))
         comp_1km = int(round(comp_count * 0.65))
 
-        x = np.array([[area_sqm, rent_per_sqm, affordability,
+        x = np.array([[area_sqm_default, rent_per_sqm, affordability,
                        comp_500m, comp_1km, am["population"], cat_enc]])
         ai_score = float(_reg.predict(x)[0])
         ai_score = round(min(10.0, max(1.0, ai_score)), 2)
@@ -342,7 +332,7 @@ def _run_csv_pipeline(category: str, rent_budget: float = 50000, area_sqm: float
         reason = _generate_reason(final_score, am["population"], rent_est,
                                    comp_count, traffic, accessibility)
 
-        profit = _estimate_profit(am["population"], rent_est, comp_count, csv_cat, area_sqm)
+        profit = _estimate_profit(am["population"], rent_est, comp_count, category, area_sqm_default)
 
         results.append({
             "area_id": am["area_id"],
@@ -495,10 +485,7 @@ def recommend_endpoint(req: RecommendRequest):
     # Fallback: synthetic
     if req.category not in _CATEGORIES:
         raise HTTPException(400, f"Unknown category. Available: {_CATEGORIES}")
-    try:
-        cat_enc = _le_cat.transform([req.category])[0]
-    except ValueError:
-        cat_enc = 0
+    cat_enc = _le_cat.transform([req.category])[0]
     results = []
     for area_id, (area_name, population) in _FALLBACK_AREAS.items():
         lookup = _CATEGORY_AREA_LOOKUP.get(req.category, {}).get(area_id, {})
@@ -626,22 +613,32 @@ def get_alerts(
 
 @app.post("/analyze")
 def analyze_endpoint(req: AnalyzeRequest):
-    csv_cat = FRONTEND_TO_CSV_MAP.get(req.category, req.category)
-    # Check if CSV loaded
-    if csv_data.loaded and csv_cat in _CATEGORIES:
-        results = _run_csv_pipeline(req.category, req.rent_budget, req.area_sqm, req.min_population)
-        if results:
-            results = _remap_to_frontend_ids([_map_to_analysis_shape(r, req.area_sqm) for r in results])
+    """Full analysis for a specific area (backward compat)."""
+    # Try CSV pipeline — always include requested area regardless of filter
+    try:
+        raw_results = _run_csv_pipeline(req.category, min_pop=0)
+        if raw_results:
+            results = _remap_to_frontend_ids([_map_to_analysis_shape(r, req.area_sqm) for r in raw_results])
             frontend_id = req.area_id
             current = next((r for r in results if r["area_id"] == frontend_id), None)
             if current:
-                filtered = [r for r in results if r["area_id"] != frontend_id]
+                filtered = [
+                    r for r in results
+                    if r["area_id"] != frontend_id
+                    and r["population"] >= (req.min_population or 0)
+                ]
                 all_sorted = sorted(filtered + [current], key=lambda x: -x["suitability_score"])
-                return {"current_area": current, "rankings": all_sorted, "best": all_sorted[0]}
+                return {
+                    "current_area": current,
+                    "rankings": all_sorted,
+                    "best": all_sorted[0] if all_sorted else None,
+                }
+    except Exception:
+        pass
 
     # Fallback synthetic
-    if req.category not in _CATEGORIES and csv_cat not in _CATEGORIES:
-        raise HTTPException(400, f"Unknown category.")
+    if req.category not in _CATEGORIES:
+        raise HTTPException(400, f"Unknown category. Available: {_CATEGORIES}")
     if req.area_id not in _FALLBACK_AREAS:
         raise HTTPException(400, f"Unknown area_id. Valid: {list(_FALLBACK_AREAS.keys())}")
     area_name = _FALLBACK_AREAS[req.area_id][0]
@@ -652,10 +649,7 @@ def analyze_endpoint(req: AnalyzeRequest):
     avg_c1km = int(round(lookup.get("comp_1km", 5)))
     rent_per_sqm = req.rent_budget / req.area_sqm
     affordability = max(0.2, min(2.0, 1 - (rent_per_sqm / 450 - 1) * 0.5))
-    try:
-        cat_enc = _le_cat.transform([req.category])[0]
-    except ValueError:
-        cat_enc = 0
+    cat_enc = _le_cat.transform([req.category])[0]
     x = np.array([[req.area_sqm, rent_per_sqm, affordability, avg_c500, avg_c1km, population, cat_enc]])
     score = round(min(10.0, max(1.0, float(_reg.predict(x)[0]))), 2)
     tier_label = _le_tier.inverse_transform([_clf.predict(x)[0]])[0]
@@ -691,14 +685,18 @@ def analyze_endpoint(req: AnalyzeRequest):
 def run_analysis(req: AnalysisRunRequest):
     """
     Full analysis pipeline — uses real CSV data as primary source.
+
+    1. Reads area-business scores from CSV (611 records)
+    2. Blends with AI model predictions
+    3. Returns ranked results with human-readable reasons
     """
-    csv_cat = FRONTEND_TO_CSV_MAP.get(req.category, req.category)
-    if req.category not in _CATEGORIES and csv_cat not in _CATEGORIES:
-        raise HTTPException(400, f"Unknown category.")
+    if req.category not in _CATEGORIES:
+        raise HTTPException(400, f"Unknown category. Available: {_CATEGORIES}")
 
     try:
-        results = _run_csv_pipeline(req.category, min_population=req.min_population)
-    except Exception:
+        results = _run_csv_pipeline(req.category, min_pop=req.min_population,
+                                     max_rent=req.max_rent)
+    except HTTPException:
         results = []
         # Fallback to synthetic
         for area_id, (area_name, population) in _FALLBACK_AREAS.items():
@@ -778,10 +776,9 @@ def export_area_scores_csv(category: str = Query("Food & Beverage")):
     csv_data = get_csv_data()
     output = io.StringIO()
     writer = csv.writer(output)
-    csv_cat = FRONTEND_TO_CSV_MAP.get(category, category)
 
     if csv_data.loaded:
-        metrics = csv_data.get_area_metrics_for_category(csv_cat)
+        metrics = csv_data.get_area_metrics_for_category(category)
         if not metrics:
             # Fallback: use scores directly
             scores = csv_data.get_scores_for_category(category)
