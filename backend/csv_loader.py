@@ -156,7 +156,7 @@ class CSVData:
         for _, row in merged.iterrows():
             results.append({
                 "area_id": int(row["area_id"]),
-                "name": row.get("area_name_y") or row.get("area_name_x", ""),
+                "name": row.get("area_name") or row.get("area_name_y") or row.get("area_name_x", "Unknown"),
                 "population": int(row["population"]),
                 "latitude": float(row["latitude"]),
                 "longitude": float(row["longitude"]),
