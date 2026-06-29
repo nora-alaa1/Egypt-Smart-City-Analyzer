@@ -171,7 +171,10 @@ def _predict_single(area_sqm, rent_egp, category, area_id=None,
 
     rent_per_sqm = rent_egp / area_sqm if area_sqm > 0 else 500
     affordability = max(0.2, min(2.0, 1 - (rent_per_sqm / 450 - 1) * 0.5))
-    cat_enc = _le_cat.transform([category])[0]
+    try:
+        cat_enc = _le_cat.transform([category])[0]
+    except ValueError:
+        cat_enc = 0
     x = np.array([[area_sqm, rent_per_sqm, affordability,
                    comp_500m, comp_1km, population, cat_enc]])
 
@@ -315,7 +318,10 @@ def _run_csv_pipeline(category: str, min_pop: int = 0,
         rent_egp = rent_est * area_sqm_default
         rent_per_sqm = rent_est
         affordability = max(0.2, min(2.0, 1 - (rent_per_sqm / 450 - 1) * 0.5))
-        cat_enc = _le_cat.transform([category])[0]
+        try:
+            cat_enc = _le_cat.transform([category])[0]
+        except ValueError:
+            cat_enc = 0
         comp_500m = int(round(comp_count * 0.35))
         comp_1km = int(round(comp_count * 0.65))
 
@@ -485,7 +491,10 @@ def recommend_endpoint(req: RecommendRequest):
     # Fallback: synthetic
     if req.category not in _CATEGORIES:
         raise HTTPException(400, f"Unknown category. Available: {_CATEGORIES}")
-    cat_enc = _le_cat.transform([req.category])[0]
+    try:
+        cat_enc = _le_cat.transform([req.category])[0]
+    except ValueError:
+        cat_enc = 0
     results = []
     for area_id, (area_name, population) in _FALLBACK_AREAS.items():
         lookup = _CATEGORY_AREA_LOOKUP.get(req.category, {}).get(area_id, {})
@@ -649,7 +658,10 @@ def analyze_endpoint(req: AnalyzeRequest):
     avg_c1km = int(round(lookup.get("comp_1km", 5)))
     rent_per_sqm = req.rent_budget / req.area_sqm
     affordability = max(0.2, min(2.0, 1 - (rent_per_sqm / 450 - 1) * 0.5))
-    cat_enc = _le_cat.transform([req.category])[0]
+    try:
+        cat_enc = _le_cat.transform([req.category])[0]
+    except ValueError:
+        cat_enc = 0
     x = np.array([[req.area_sqm, rent_per_sqm, affordability, avg_c500, avg_c1km, population, cat_enc]])
     score = round(min(10.0, max(1.0, float(_reg.predict(x)[0]))), 2)
     tier_label = _le_tier.inverse_transform([_clf.predict(x)[0]])[0]
