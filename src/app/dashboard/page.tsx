@@ -30,22 +30,25 @@ export default function DashboardPage() {
         min_population: filters.min_population,
       });
       setAnalysisResult(result);
-      if (result.best) {
+      const topRec = result.best || result.current_area;
+      if (topRec) {
         setRecommendation({
-          area_name: result.best.area_name,
+          area_name: topRec.area_name,
           category: filters.category,
-          suitability_score: result.best.suitability_score,
-          tier: result.best.tier,
-          population: result.best.population,
-          estimated_rent: result.best.estimated_rent,
-          rent_per_sqm: result.best.rent_per_sqm,
-          competitors_500m: result.best.competitors_500m,
-          recommended: result.best.suitability_score >= 6.0,
-          reason: result.best.reason,
-          traffic_score: (result.best as any).traffic_score ?? 5,
-          accessibility_score: (result.best as any).accessibility_score ?? 5,
-          profit_analysis: (result.best as any).profit_analysis,
+          suitability_score: topRec.suitability_score,
+          tier: topRec.tier,
+          population: topRec.population,
+          estimated_rent: topRec.estimated_rent,
+          rent_per_sqm: topRec.rent_per_sqm,
+          competitors_500m: topRec.competitors_500m,
+          recommended: topRec.suitability_score >= 6.0,
+          reason: topRec.reason,
+          traffic_score: (topRec as any).traffic_score ?? 5,
+          accessibility_score: (topRec as any).accessibility_score ?? 5,
+          profit_analysis: (topRec as any).profit_analysis,
         });
+      } else {
+        setRecommendation(null);
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Analysis failed");
