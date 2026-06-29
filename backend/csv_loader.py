@@ -130,7 +130,7 @@ class CSVData:
         if not self._loaded:
             return []
 
-        scores = self.scores[self.scores["category"] == category].copy()
+        scores = self.scores[self.scores["category"] == category].drop_duplicates(subset=["area_id"]).copy()
         if scores.empty:
             return []
 
@@ -151,11 +151,16 @@ class CSVData:
             "suitability_score": 5.0,
             "recommended": False
         }, inplace=True)
+        
+        avg_rents = {}
+        if not self.suitability.empty:
+            avg_rents = self.suitability.groupby("area_id")["rent_per_sqm"].mean().to_dict()
 
         results = []
         for _, row in merged.iterrows():
+            aid = int(row["area_id"])
             results.append({
-                "area_id": int(row["area_id"]),
+                "area_id": aid,
                 "name": row.get("area_name") or row.get("area_name_y") or row.get("area_name_x", "Unknown"),
                 "population": int(row["population"]),
                 "latitude": float(row["latitude"]),
@@ -166,6 +171,7 @@ class CSVData:
                 "market_saturation": float(row["market_saturation"]),
                 "suitability_score": float(row["suitability_score"]),
                 "recommended": bool(row["recommended"]),
+                "avg_rent": float(avg_rents.get(aid, 300.0)),
             })
 
         return results
