@@ -1,54 +1,78 @@
-# 🏙️ SmartCity Analyzer
+# 🏙️ Egypt Smart City Analyzer
 
-> End-to-end data engineering pipeline for **Alexandria, Egypt** — collecting, streaming, transforming, and warehousing urban data to score commercial property suitability.
+> *Helping entrepreneurs find their perfect spot in Alexandria — one data point at a time.*
 
----
-
-## 📐 Architecture
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      DATA SOURCES                               │
-│  Aqarmap · OpenStreetMap · Egyfinder · CAPMAS · WorldPop · GEE  │
-└──────────────────────────┬──────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 1 — Ingestion (Kafka + PostgreSQL)                       │
-│                                                                 │
-│  5 Kafka Pipelines (producers → consumers)                      │
-│  → output_all/  (CSV files)                             │
-│  → Bronze Loader → PostgreSQL  schema: bronze                   │
-└──────────────────────────┬──────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 2 — Transformation (PySpark)                             │
-│                                                                 │
-│  PostgreSQL (bronze) → Apache Spark 3.5.3                       │
-│  → Haversine distances · Suitability scoring · Star schema      │
-│  → gold_output/  (Dim + Fact CSV files)                       │
-└──────────────────────────┬──────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 3 — Data Warehouse (SQL Server)                          │
-│                                                                 │
-│  Gold files → SQL Server  db: SmartCity                         │
-│  Star Schema: 3 Dims + 2 Facts · PKs · FKs · Indexes           │
-└─────────────────────────────────────────────────────────────────┘
-                           ▲
-                           │  orchestrates all phases
-┌─────────────────────────────────────────────────────────────────┐
-│  AIRFLOW — Orchestration  (smartcity_full_pipeline DAG)         │
-│                                                                 │
-│  Schedule: every 6 months  ·  UI: localhost:8085                │
-└─────────────────────────────────────────────────────────────────┘
-```
+🔗 **Live App:** [egypt-smart-city-analyzer.vercel.app](https://egypt-smart-city-analyzer.vercel.app)
 
 ---
 
-## 📊 Data Warehouse — Final Row Counts
+## 📌 Overview
+
+Every city has a story hidden in its data — population flows, rental trends, competitor patterns, and foot traffic. But that story is rarely told in a way entrepreneurs and investors can actually use.
+
+**Egypt Smart City Analyzer** is a full end-to-end data engineering platform that transforms raw urban data into actionable business intelligence. It collects, streams, processes, warehouses, and models city data — then presents the results through an AI-powered web dashboard that helps anyone make smarter location decisions.
+
+The platform is built to scale across any Egyptian city. **Alexandria** is our starting point — a pilot that proves the concept and sets the foundation for a national urban intelligence system.
+
+**No guesswork. Just data.**
+
+---
+
+## ⚙️ Pipeline
+
+```
+  [ Data Sources ]
+  OpenStreetMap · Aqarmap · CAPMAS · WorldPop · Google Earth Engine
+         │
+         ▼
+  [ Phase 1 — Ingestion ]
+  Kafka Producers & Consumers  ──►  PostgreSQL  (Bronze Layer)
+  5 pipelines: Rental · Business · Education · Population · Traffic
+         │
+         ▼
+  [ Phase 2 — Transformation ]
+  PySpark ETL  ──►  Gold Layer  (Dim + Fact CSV files)
+  Haversine distances · Suitability scoring · Medallion Architecture
+         │
+         ▼
+  [ Phase 3 — Data Warehouse ]
+  SQL Server  ──►  Star Schema  (3 Dimensions · 2 Facts · 3,548 rows)
+         │
+         ▼
+  [ Phase 4 — Orchestration ]
+  Apache Airflow  ──►  Full pipeline DAG  (runs every 6 months)
+         │
+         ▼
+  [ Phase 5 — AI & API ]
+  scikit-learn Models  +  FastAPI  ──►  Tier + Score predictions
+         │
+         ▼
+  [ Frontend ]
+  Next.js Dashboard  ──►  Live on Vercel  🌐
+```
+
+---
+
+## 🛠️ Tools & Technologies
+
+| Layer | Tool | What it does |
+|---|---|---|
+| **Streaming** | Apache Kafka + Zookeeper | Streams scraped data in real time |
+| **Bronze DB** | PostgreSQL 16 | Stores raw ingested data |
+| **Processing** | PySpark 3.5 + Pandas | Cleans, transforms, and scores data |
+| **Warehouse** | SQL Server + Star Schema | Powers analytical queries |
+| **Orchestration** | Apache Airflow 2.9 | Schedules and monitors the pipeline |
+| **ML** | scikit-learn (RF + GBR) | Predicts suitability tier and score |
+| **API** | FastAPI + Uvicorn | Serves predictions to the frontend |
+| **Frontend** | Next.js + TypeScript + Tailwind | Interactive web dashboard |
+| **Deployment** | Vercel + Render | Hosts the live app |
+| **Containers** | Docker + Docker Compose | Reproducible environments |
+| **Scraping** | BeautifulSoup4 + Requests | Extracts data from the web |
+| **Data Sources** | OSM · Aqarmap · CAPMAS · WorldPop · GEE | Real urban data inputs |
+
+---
+
+## 📊 Data Warehouse — Snapshot
 
 | Table | Type | Rows |
 |---|---|---|
@@ -56,151 +80,98 @@
 | `Dim_Area` | Dimension | 51 |
 | `Dim_Property` | Dimension | 221 |
 | `Fact_Area_Business_Score` | Fact | 612 |
-| `Fact_Property_Suitability` | Fact | 2,652 |
+| `Fact_Property_Suitability` | Fact | **2,652** |
 
-**Total: 3,548 rows**
+**Total: 3,548 rows** across 5 tables.
 
 ---
 
-## 🛠️ Tools & Technologies
+## 🤖 AI Models
 
-| Layer | Tools |
-|---|---|
-| **Orchestration** | Apache Airflow 2.9 |
-| **Processing** | Apache Spark (PySpark) 3.5.3 + NumPy / Pandas |
-| **Streaming** | Apache Kafka + Zookeeper + Kafka UI |
-| **Databases** | PostgreSQL 16 (Bronze) · SQL Server (Data Warehouse) |
-| **Containers** | Docker + Docker Compose |
-| **Python Stack** | Pandas, NumPy, kafka-python |
-| **Scraping** | Requests, BeautifulSoup4 |
-| **Data Sources** | Aqarmap · OpenStreetMap (Overpass) · Egyfinder · CAPMAS · WorldPop · Google Earth Engine |
+Two models trained on `Fact_Property_Suitability` (2,652 records):
+
+| Model | Algorithm | Output |
+|---|---|---|
+| **Tier Classifier** | RandomForestClassifier — 200 trees | `High` / `Medium` / `Low` |
+| **Score Regressor** | GradientBoostingRegressor — 300 estimators | Score from **1.0 → 10.0** |
+
+**Features:** property size · rent per m² · affordability index · competitor density (500m & 1km) · population · business category.
+
+**API Endpoints:**
+
+| Endpoint | Method | What it returns |
+|---|---|---|
+| `/predict` | POST | Suitability score + tier for a single property |
+| `/recommend` | POST | Top N areas for a business type & budget |
+| `/areas` | GET | All area names and IDs |
+| `/categories` | GET | All supported business types |
+
+---
+
+## 🌐 The Web App
+
+A live dashboard at **[egypt-smart-city-analyzer.vercel.app](https://egypt-smart-city-analyzer.vercel.app)** where users can:
+
+- Choose a **district** (Smouha, Sidi Gaber, Stanley, Rushdy, and 8 more)
+- Select a **business type** (Food & Beverage, Retail, Healthcare, Education, Fitness, Entertainment)
+- Set a **rent budget** and **space** in m²
+- Get an **AI suitability score** with a `High / Medium / Low` tier
+- View a live **OpenStreetMap** with color-coded grid overlays
+- Compare **competitor density**, **population distribution**, and **rental prices** across districts
+- Export results as **CSV** for use in Power BI or Excel
 
 ---
 
 ## 📁 Project Structure
 
 ```
-SmartCityAnalyzer-main/
+Egypt-Smart-City-Analyzer/
 │
-├── README.md                              ← You are here
-├── setup.sh                               ← One-time environment setup
-├── run.sh                                 ← Start / Stop / Status
-├── Dockerfile.airflow
-│
-├── Phase1_Scraping/                       ← Kafka + PostgreSQL (Bronze)
-│   ├── README.md
-│   ├── docker-compose.master.yml          ← All Phase 1 services
-│   ├── output_all/                        ← All pipeline outputs
-│   ├── pipeline_01_rental/                ← Aqarmap scraping
-│   ├── pipeline_02_business/              ← OSM + Egyfinder
-│   ├── pipeline_03_education/             ← OSM Education
-│   ├── pipeline_04_population/            ← CAPMAS + WorldPop + GEE
-│   ├── pipeline_05_traffic/               ← OSMnx + SQLite
-│   └── pipeline_bronze_postgres/          ← Auto-loader → PostgreSQL
-│
-├── Phase2_Transform/                      ← PySpark ETL
-│   ├── README.md
-│   ├── SmartCity_Phase1_Fixed.ipynb       ← Main Spark notebook
-│   ├── run_phase2.py                      ← CLI runner
-│   └── gold_output/                       ← Dim + Fact Excel files
-│       ├── Dim_Area.xlsx
-│       ├── Dim_Business_Type.xlsx
-│       ├── Dim_Property.xlsx
-│       ├── Fact_Area_Business_Score.xlsx
-│       └── Fact_Property_Suitability.xlsx
-│
-├── Phase3_Dwh/                            ← SQL Server Data Warehouse
-│   ├── README.md
-│   ├── load_to_sqlserver.ipynb
-│   ├── run_load.py
-│   └── dwh/
-│       ├── 01_create_schema.sql
-│       ├── 02_create_tables.sql
-│       ├── 03_constraints.sql
-│       └── 04_indexes.sql
-│
-└── SmartCity-Airflow/                     ← Airflow Orchestrator
-    ├── README.md
-    ├── docker-compose.yml
-    ├── .env.example                       ← Copy to .env and edit
-    └── dags/
-        └── smartcity_pipeline.py          ← Full pipeline DAG
+├── Phase1_Scraping/        ← Kafka + PostgreSQL (Bronze Layer)
+├── Phase2_Transform/       ← PySpark ETL + Gold CSV outputs
+├── Phase3_Dwh/             ← SQL Server DWH + Star Schema SQL
+├── SmartCity-Airflow/      ← Airflow DAG + Docker Compose
+├── Phase_5_ML_Model/       ← ML training notebook + FastAPI server
+├── backend/                ← Production API (deployed on Render)
+├── src/                    ← Next.js frontend source
+├── setup.sh                ← One-time environment setup
+└── run.sh                  ← Start / Stop / Status commands
 ```
 
 ---
 
-## ⚡ Quick Start
+## 🚀 Quick Start
 
 ```bash
-# 1. One-time setup (check Docker, pull images, create dirs)
+# 1. One-time setup
 bash setup.sh
 
 # 2. Run everything via Airflow (recommended)
 bash run.sh airflow
 
 # 3. Or run phases manually
-bash run.sh phase1        # Start Kafka + PostgreSQL pipelines
-bash run.sh phase2        # Run PySpark transform
-bash run.sh phase3        # Load to SQL Server
+bash run.sh phase1    # Kafka + PostgreSQL scraping
+bash run.sh phase2    # PySpark transformation
+bash run.sh phase3    # Load to SQL Server DWH
 
-# 4. Check status
-bash run.sh status
-
-# 5. Stop everything
-bash run.sh stop
+# 4. Start the ML API
+cd Phase_5_ML_Model
+uvicorn smartcity_api:app --reload --port 8000
+# Docs: http://localhost:8000/docs
 ```
 
 ---
 
 ## 🔗 Service Endpoints
 
-| Service | URL / Port | Credentials |
+| Service | URL | Credentials |
 |---|---|---|
 | Airflow UI | http://localhost:8085 | `admin / admin` |
 | Kafka UI | http://localhost:8080 | — |
-| Kafka Broker | `localhost:9092` | — |
 | PostgreSQL (Bronze) | `localhost:5432` | `smartcity / smartcity123` |
-| PostgreSQL (Airflow) | `localhost:5433` | `airflow / airflow` |
 | SQL Server (DWH) | `localhost:1433` | `sa / YourPassword` |
+| ML API Docs | http://localhost:8000/docs | — |
 
 ---
 
-## 📋 Phase Details
-
-| Phase | README | Key Tech |
-|---|---|---|
-| Phase 1 — Ingestion | [Phase1_Scraping/README.md](Phase1_Scraping/README.md) | Kafka · PostgreSQL · Docker |
-| Phase 2 — Transform | [Phase2_Transform/README.md](Phase2_Transform/README.md) | PySpark · Haversine · Medallion |
-| Phase 3 — DWH | [Phase3_Dwh/README.md](Phase3_Dwh/README.md) | SQL Server · Star Schema |
-| Airflow — Orchestration | [SmartCity-Airflow/README.md](SmartCity-Airflow/README.md) | Airflow DAG · LocalExecutor |
-
----
-
-## 🔄 Airflow DAG Flow
-
-```
-start_infrastructure → wait_kafka_healthy
-                              │
-           ┌──────────────────┼──────────────────────┐
-           ▼                  ▼                      ▼
-     p01_rental          p02_business  ...  p05_traffic   (parallel)
-           │                  │                      │
-     p01_consumer       p02_consumer          p05_consumer
-           └──────────────────┴──────────────────────┘
-                              │
-                       bronze_loader  ←─── cleanup_kafka
-                              │
-                  phase2_spark_transform
-                              │
-                   phase3_create_dwh_schema
-                              │
-                  phase3_load_gold_to_sqlserver
-                              │
-                phase3_apply_constraints_indexes
-```
-
-**Schedule:** `0 2 1 */6 *` — 2:00 AM on the 1st of every 6 months
-
----
-
-*SmartCity Analyzer · Alexandria, Egypt · Data Engineering Pipeline*
+*Built with ❤️ by the SmartCity Team · Faculty of Engineering · Menofia University · Alexandria, Egypt*
