@@ -28,12 +28,13 @@ interface AnalysisFiltersProps {
 }
 
 const BUSINESS_CATEGORIES = [
-  "Food & Beverage",
-  "Retail",
-  "Healthcare",
   "Education",
-  "Fitness",
-  "Entertainment",
+  "Financial Services",
+  "Food & Beverage",
+  "Health & Fitness",
+  "Healthcare",
+  "Retail",
+  "Tourism & Hospitality",
 ];
 
 // 12 core districts (simple 1-12 IDs matching fallback model)
